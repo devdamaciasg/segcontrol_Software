@@ -8,13 +8,13 @@
           &nbsp;
         </h3>
         <p>
-            Servicios
+          SERVICIOS
         </p>
       </div>
       <div class="icon">
         <i class="ion ion-person-add"></i>
       </div>
-      <a href="#" class="small-box-footer">
+      <a href="#servicios" class="small-box-footer">
         Acceder <i class="fa fa-arrow-circle-right"></i>
       </a>
     </div>

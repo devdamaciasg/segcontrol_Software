@@ -245,12 +245,21 @@ public function actualizarDatos($id,empleado $obj,cliente $udc,$tabla){
 }
 
 
- public function cargarListaCliente(){
+ public function cargarListaCliente($id){
 	 $data_source = new DataSource();
 	 $sesion = array();
-	 $data = $data_source->ejecutarConsulta(" SELECT * FROM cliente JOIN usuario on (cliente.id_usuario=usuario.id_usuario) JOIN rol ON(usuario.id_rol=rol.id_rol) GROUP BY cliente.id_cliente");
+	 if(intval($id) == 0){
+		 echo "bien";
+		   $data = $data_source->ejecutarConsulta(" SELECT * FROM cliente JOIN usuario on (cliente.id_usuario=usuario.id_usuario) JOIN rol ON(usuario.id_rol=rol.id_rol) GROUP BY cliente.id_cliente");
+	 }else{
+       echo "mal";
+		   $data = $data_source->ejecutarConsulta(" SELECT * FROM cliente JOIN usuario on (cliente.id_usuario=usuario.id_usuario) JOIN rol ON(usuario.id_rol=rol.id_rol) where cliente.id_cliente == ".$id." GROUP BY cliente.id_cliente");
+	 }
+
 	 if(count($data) >= 1){
+
 		 foreach ($data as $clave => $valor) {
+
 				 $clienteObj  = new clienteUsuario(
 				 $data[$clave]["id_cliente"],
 				 $data[$clave]["id_usuario"],

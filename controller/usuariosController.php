@@ -103,10 +103,12 @@ class usuariosController{
 
     }
 
-    public function cargarListaCliente (){
+    public function cargarListaCliente ($id){
       $ud=new usuariosDao();
-      $sesion = array();
-      return $sesion=$ud->cargarListaCliente();
+      $v=array();
+      $v=$ud->cargarListaCliente($id);
+      echo $v[0]->getNombre();
+      return $v;
 
     }
 
