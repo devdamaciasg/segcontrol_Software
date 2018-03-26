@@ -33,20 +33,24 @@ class conductorDao
       $data_table = $data_source->ejecutarConsulta("SELECT * FROM `servicio_novedad` where id_conductor = :id "
       ,array(':id'=>$id_conductor));
       $objConductor = null;
-      $arrayConductor = array();
+      if(count($data_table)>0){
 
-      foreach ($data_table as $clave => $valor) {
-        $objConductor = new minuta(
+         $objConductor = new minuta(
           $data_table[$clave]["id_conductor"],
           $data_table[$clave]["cedula"],
           $data_table[$clave]["nombre_conductor"],
           $data_table[$clave]["telefono1"],
           $data_table[$clave]["telefono2"],
           $data_table[$clave]["telefono3"]);
-          array_push($arrayConductor, $objConductor);
+            return $objConductor;
+        }else{
+             return null;
         }
-        return $arrayConductor;
+
       }
+
+
+
 
 
       public function registrarConductor(conductor $conductor){
