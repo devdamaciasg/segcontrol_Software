@@ -87,7 +87,7 @@
  $(document).on('click','#conductor_main',function(e){
  e.stopPropagation();
  e.preventDefault();
-
+console.log('conducotr')
      //llamada al fichero PHP con AJAX
      $.ajax({
        url:   '../vistas/layout/general/conductor/conductorMain.php',
