@@ -4,10 +4,9 @@ require_once ($_SERVER['DOCUMENT_ROOT']."/segcontrol/model/servicios.php");
 require_once ($_SERVER['DOCUMENT_ROOT']."/segcontrol/model/minuta.php");
 require_once ($_SERVER['DOCUMENT_ROOT']."/segcontrol/model/conductor.php");
 require_once ($_SERVER['DOCUMENT_ROOT']."/segcontrol/model/vehiculo.php");
-class serviciosDAO
-{
+class serviciosDAO{
 
-  public function listaServicios(){
+public function listaServicios(){
 
     $data_source = new DataSource();
     $data_table = $data_source->ejecutarConsulta("SELECT * FROM `servicio`");
@@ -39,7 +38,7 @@ class serviciosDAO
       return $arrayServicios;
     }
 
-    public function servicioId($id){
+public function servicioId($id){
       $data_source = new DataSource();
       $data_table = $data_source->ejecutarConsulta("SELECT * FROM `servicio` where id_servicio = :id",array(
         ':id'=>$id));
@@ -72,7 +71,7 @@ class serviciosDAO
         }
       }
 
-      public function servicioEmp($id){
+public function servicioEmp($id){
         $data_source = new DataSource();
         $data_table = $data_source->ejecutarConsulta("SELECT * FROM `servicio` where id_empleado = :id",array(
           ':id'=>$id));
@@ -105,7 +104,7 @@ class serviciosDAO
           }
         }
 
-        public function servicioCli($id){
+public function servicioCli($id){
           $data_source = new DataSource();
           $data_table = $data_source->ejecutarConsulta("SELECT * FROM `servicio` where id_cliente = :id",array(
             ':id'=>$id));
@@ -138,7 +137,7 @@ class serviciosDAO
             }
           }
 
-          public function registrarServicio(servicio $servicio){
+public function registrarServicio(servicio $servicio){
             $data_source = new DataSource();
             $sql = "INSERT INTO servicio VALUES (:id_servico,:id_conductor,:id_vehiculo,:id_cliente,
               :id_empleado,:manifiesto,:fecha_creacion,:fecha_fin,:estado,:satelital,:ciudad_origen,
@@ -170,7 +169,7 @@ class serviciosDAO
 
           }
 
-          public function actualizarServicio(servicio $servicio){
+public function actualizarServicio(servicio $servicio){
             $data_source = new DataSource();
             $sql = "UPDATE servicio SET id_conductor = :id_conductor,
             id_vehiculo = :id_vehiculo,
@@ -215,16 +214,16 @@ class serviciosDAO
           return $resultado;
         }
 
-        public function cerrarServicio($id_servicio){
+public function cerrarServicio($id_servicio){
           $data_source = new DataSource();
           $sql = "UPDATE servicio SET estado = CERRADO,
           WHERE idservicio = :idservicio";
           $resultado = $data_source->ejecutarActualizacion($sql,array(
             ':id_servicio'=>$id_servicio));
             return $resultado;
-          }
+}
 
-    
+
 
 }
 ?>

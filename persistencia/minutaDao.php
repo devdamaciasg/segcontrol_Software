@@ -72,7 +72,7 @@ class minutaDao
           return $arrayMinuta;
         }
 
-        public function registrarMinuta(servicio $minuta){
+        public function registrarMinuta(minuta $minuta){
           $data_source = new DataSource();
           $sql = "INSERT INTO minuta VALUES (:id_servico_novedad,:id_servicio,:id_empleado,:fecha_novedad,
             :evento,:observacion,:nota)";

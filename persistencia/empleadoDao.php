@@ -1,0 +1,157 @@
+<?php
+require_once ($_SERVER['DOCUMENT_ROOT']."/segcontrol/persistencia/DataSource.php");
+require_once ($_SERVER['DOCUMENT_ROOT']."/segcontrol/model/servicios.php");
+require_once ($_SERVER['DOCUMENT_ROOT']."/segcontrol/model/minuta.php");
+require_once ($_SERVER['DOCUMENT_ROOT']."/segcontrol/model/conductor.php");
+require_once ($_SERVER['DOCUMENT_ROOT']."/segcontrol/model/vehiculo.php");
+require_once ($_SERVER['DOCUMENT_ROOT']."/segcontrol/model/empleado.php");
+require_once ($_SERVER['DOCUMENT_ROOT']."/segcontrol/model/usuario.php");
+require_once ($_SERVER['DOCUMENT_ROOT']."/segcontrol/model/cliente.php");
+class empleadoDao
+{
+
+  public function listaEmpleados(){
+
+    $data_source = new DataSource();
+    $data_table = $data_source->ejecutarConsulta("SELECT * FROM `empleado` ");
+    $objEmpleado = null;
+    $arrayEmpleado = array();
+
+    foreach ($data_table as $clave => $valor) {
+    $objEmpleado = new empleado(
+        $data_table[$clave]["id_empleado"],
+        $data_table[$clave]["id_usuario"],
+        $data_table[$clave]["nombre"],
+        $data_table[$clave]["tipo_documento"],
+        $data_table[$clave]["numero_documento"],
+        $data_table[$clave]["direccion"],
+        $data_table[$clave]["ciudad"],
+        $data_table[$clave]["fijo"],
+        $data_table[$clave]["celular1"],
+        $data_table[$clave]["celular2"],
+        $data_table[$clave]["celular3"],
+        $data_table[$clave]["email"],
+        $data_table[$clave]["foto"]);
+        array_push($arrayEmpleado, $objEmpleado);
+      }
+      return $arrayConductor;
+    }
+
+    public function empleadoId($id_empleado){
+
+      $data_source = new DataSource();
+      $data_table = $data_source->ejecutarConsulta("SELECT * FROM `empleado` where id_empleado = :id "
+      ,array(':id'=>$id_empleado));
+      $objConductor = null;
+      $arrayConductor = array();
+
+      foreach ($data_table as $clave => $valor) {
+      $objEmpleado = new empleado(
+          $data_table[$clave]["id_empleado"],
+          $data_table[$clave]["id_usuario"],
+          $data_table[$clave]["nombre"],
+          $data_table[$clave]["tipo_documento"],
+          $data_table[$clave]["numero_documento"],
+          $data_table[$clave]["direccion"],
+          $data_table[$clave]["ciudad"],
+          $data_table[$clave]["fijo"],
+          $data_table[$clave]["celular1"],
+          $data_table[$clave]["celular2"],
+          $data_table[$clave]["celular3"],
+          $data_table[$clave]["email"],
+          $data_table[$clave]["foto"]);
+          array_push($arrayEmpleado, $objEmpleado);
+        }
+        return $arrayEmpleado;
+      }
+
+      public function empleadoIdUsuario($id_usuario){
+
+        $data_source = new DataSource();
+        $objConductor = null;
+        $arrayConductor = array();
+        $data_table = $data_source->ejecutarConsulta("SELECT * FROM `empleado` where id_usuario = :id "
+        ,array(':id'=>$id_usuario));
+
+
+        foreach ($data_table as $clave => $valor) {
+        $objEmpleado = new empleado(
+            $data_table[$clave]["id_empleado"],
+            $data_table[$clave]["id_usuario"],
+            $data_table[$clave]["nombre"],
+            $data_table[$clave]["tipo_documento"],
+            $data_table[$clave]["numero_documento"],
+            $data_table[$clave]["direccion"],
+            $data_table[$clave]["ciudad"],
+            $data_table[$clave]["fijo"],
+            $data_table[$clave]["celular1"],
+            $data_table[$clave]["celular2"],
+            $data_table[$clave]["celular3"],
+            $data_table[$clave]["email"],
+            $data_table[$clave]["foto"]);
+            array_push($arrayEmpleado, $objEmpleado);
+          }
+          return $arrayEmpleado;
+        }
+      public function registrarEmpleado(empleado $empleado){
+        $data_source = new DataSource();
+        $sql = "INSERT INTO empleado VALUES (:id_empleado,:id_usuario,:nombre,:tipo_documento,:numero_documento,:direccion,
+        :ciudad,:fijo,:celular1,:celular2,:celular3,:email,:foto)";
+
+          $resultado = $data_source->ejecutarActualizacion($sql,array(
+            ':id_empleado'=>$empleado->getId_empleado(),
+            ':id_usuario'=>$empleado->getId_usuario(),
+            ':nombre'=>$empleado->getNombre(),
+            ':tipo_documento'=>$empleado->getTipo_documento(),
+            ':numero_documento'=>$empleado->getNumero_documento(),
+            ':direccion'=>$empleado->getDireccion()
+            ':ciudad'=>$empleado->getCiudad(),
+            ':fijo'=>$empleado->getFijo(),
+            ':nombre_conductor'=>$empleado->getNombre_conductor(),
+            ':celular1'=>$empleado->getCelular1(),
+            ':celular2'=>$empleado->getCelular2(),
+            ':celular3'=>$empleado->getCelular3(),
+            ':email'=>$empleado->getEmail(),
+            ':foto'=>$empleado->getFoto()
+          )
+        );
+        return $resultado;
+
+      }
+
+      public function actualizarEmpleado(empleado $empleado){
+        $data_source = new DataSource();
+        $sql = "UPDATE empleado SET
+        id_usuario = :id_usuario,
+        nombre = :nombre,
+        tipo_documento = :tipo_documento,
+        numero_documento = :numero_documento,
+        ciudad = :  ciudad,
+        direccion= :direccion,
+        fijo = :fijo,
+        email = :email,
+        foto = :foto,
+        celular1 = :celular1,
+        celular2 = :celular2,
+        celular3 = :celular3
+        WHERE id_empleado = :id_empleado";
+        $resultado = $data_source->ejecutarActualizacion($sql,array(
+          ':id_empleado'=>$empleado->getId_empleado(),
+          ':id_usuario'=>$empleado->getId_usuario(),
+          ':nombre'=>$empleado->getNombre(),
+          ':tipo_documento'=>$empleado->getTipo_documento(),
+          ':numero_documento'=>$empleado->getNumero_documento(),
+          ':direccion'=>$empleado->getDireccion()
+          ':ciudad'=>$empleado->getCiudad(),
+          ':fijo'=>$empleado->getFijo(),
+          ':celular1'=>$empleado->getCelular1(),
+          ':celular2'=>$empleado->getCelular2(),
+          ':celular3'=>$empleado->getCelular3(),
+          ':email'=>$empleado->getEmail(),
+          ':foto'=>$empleado->getFoto()
+        )
+      );
+      return $resultado;
+    }
+  }
+  ?>
