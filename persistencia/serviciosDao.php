@@ -15,7 +15,7 @@ class serviciosDAO
     $arrayServicios = array();
 
     foreach ($data_table as $clave => $valor) {
-        $objServicios = new servicio(
+      $objServicios = new servicio(
         $data_table[$clave]["id_servicio"],
         $data_table[$clave]["id_conductor"],
         $data_table[$clave]["id_vehiculo"],
@@ -138,91 +138,93 @@ class serviciosDAO
             }
           }
 
-      public function registrarServicio(servicio $servicio){
-        $data_source = new DataSource();
-        $sql = "INSERT INTO servicio VALUES (:id_servico,:id_conductor,:id_vehiculo,:id_cliente,
-          :id_empleado,:manifiesto,:fecha_creacion,:fecha_fin,:estado,:satelital,:ciudad_origen,
-          :direccion_descargue,:sello,:numero_contenedor,:link_localizador,:usuario_satelital,
-           :clave_satelital,:ruta)";
+          public function registrarServicio(servicio $servicio){
+            $data_source = new DataSource();
+            $sql = "INSERT INTO servicio VALUES (:id_servico,:id_conductor,:id_vehiculo,:id_cliente,
+              :id_empleado,:manifiesto,:fecha_creacion,:fecha_fin,:estado,:satelital,:ciudad_origen,
+              :direccion_descargue,:sello,:numero_contenedor,:link_localizador,:usuario_satelital,
+              :clave_satelital,:ruta)";
 
+              $resultado = $data_source->ejecutarActualizacion($sql,array(
+                ':id_servico'=>$servicio->getId_servico(),
+                ':id_conductor'=>$servicio->getId_conductor(),
+                ':id_vehiculo'=>$servicio->getId_vehiculo(),
+                ':id_cliente'=>$servicio->getId_cliente(),
+                ':id_empleado'=>$servicio->getId_empleado(),
+                ':manifiesto'=>$servicio->getManifiesto(),
+                ':fecha_creacion'=>$servicio->getFecha_creacion(),
+                ':fecha_fin'=>$servicio->getFecha_fin(),
+                ':estado'=>$servicio->getEstado(),
+                ':satelital'=>$servicio->getSatelital(),
+                ':ciudad_origen'=>$servicio->getCiudad_origen(),
+                ':direccion_descargue'=>$servicio->getDireccion_descargue(),
+                ':sello'=>$servicio->getSello(),
+                ':numero_contenedor'=>$servicio->getNumero_contenedor(),
+                ':link_localizador'=>$servicio->getLink_localizador(),
+                ':usuario_satelital'=>$servicio->getUsuario_satelital(),
+                ':clave_satelital'=>$servicio->getClave_satelital(),
+                ':ruta'=>$servicio->getRuta()
+              )
+            );
+            return $resultado;
+
+          }
+
+          public function actualizarServicio(servicio $servicio){
+            $data_source = new DataSource();
+            $sql = "UPDATE servicio SET id_conductor = :id_conductor,
+            id_vehiculo = :id_vehiculo,
+            id_cliente = :id_cliente,
+            id_empleado = :id_empleado,
+            manifiesto = :manifiesto,
+            fecha_creacion = :fecha_creacion,
+            fecha_fin = :fecha_fin,
+            estado = :estado,
+            satelital = :satelital,
+            ciudad_origen = :ciudad_origen,
+            direccion_descargue = :direccion_descargue,
+            sello = :sello,
+            numero_contenedor = :numero_contenedor,
+            link_localizador = :link_localizador,
+            usuario_satelital = :usuario_satelital,
+            clave_satelital = :clave_satelital,
+            ruta = :ruta
+            WHERE idservicio = :idservicio
+            ";
             $resultado = $data_source->ejecutarActualizacion($sql,array(
-            ':id_servico'=>$servicio->getId_servico(),
-            ':id_conductor'=>$servicio->getId_conductor(),
-            ':id_vehiculo'=>$servicio->getId_vehiculo(),
-            ':id_cliente'=>$servicio->getId_cliente(),
-            ':id_empleado'=>$servicio->getId_empleado(),
-            ':manifiesto'=>$servicio->getManifiesto(),
-            ':fecha_creacion'=>$servicio->getFecha_creacion(),
-            ':fecha_fin'=>$servicio->getFecha_fin(),
-            ':estado'=>$servicio->getEstado(),
-            ':satelital'=>$servicio->getSatelital(),
-            ':ciudad_origen'=>$servicio->getCiudad_origen(),
-            ':direccion_descargue'=>$servicio->getDireccion_descargue(),
-            ':sello'=>$servicio->getSello(),
-            ':numero_contenedor'=>$servicio->getNumero_contenedor(),
-            ':link_localizador'=>$servicio->getLink_localizador(),
-            ':usuario_satelital'=>$servicio->getUsuario_satelital(),
-            ':clave_satelital'=>$servicio->getClave_satelital(),
-            ':ruta'=>$servicio->getRuta()
-          )
-        );
-        return $resultado;
+              ':id_conductor'=>$servicio->getId_conductor(),
+              ':id_vehiculo'=>$servicio->getId_vehiculo(),
+              ':id_cliente'=>$servicio->getId_cliente(),
+              ':id_empleado'=>$servicio->getId_empleado(),
+              ':manifiesto'=>$servicio->getManifiesto(),
+              ':fecha_creacion'=>$servicio->getFecha_creacion(),
+              ':fecha_fin'=>$servicio->getFecha_fin(),
+              ':estado'=>$servicio->getEstado(),
+              ':satelital'=>$servicio->getSatelital(),
+              ':ciudad_origen'=>$servicio->getCiudad_origen(),
+              ':direccion_descargue'=>$servicio->getDireccion_descargue(),
+              ':sello'=>$servicio->getSello(),
+              ':numero_contenedor'=>$servicio->getNumero_contenedor(),
+              ':link_localizador'=>$servicio->getLink_localizador(),
+              ':usuario_satelital'=>$servicio->getUsuario_satelital(),
+              ':clave_satelital'=>$servicio->getClave_satelital(),
+              ':ruta'=>$servicio->getRuta(),
+              ':idservicio'=>$servicio->getId_servicio()
+            )
+          );
+          return $resultado;
+        }
 
-      }
+        public function cerrarServicio($id_servicio){
+          $data_source = new DataSource();
+          $sql = "UPDATE servicio SET estado = CERRADO,
+          WHERE idservicio = :idservicio";
+          $resultado = $data_source->ejecutarActualizacion($sql,array(
+            ':id_servicio'=>$id_servicio));
+            return $resultado;
+          }
 
-      public function actualizarServicio(servicio $servicio){
-        $data_source = new DataSource();
-        $sql = "UPDATE servicio SET id_conductor = :id_conductor,
-        id_vehiculo = :id_vehiculo,
-        id_cliente = :id_cliente,
-        id_empleado = :id_empleado,
-        manifiesto = :manifiesto,
-        fecha_creacion = :fecha_creacion,
-        fecha_fin = :fecha_fin,
-        estado = :estado,
-        satelital = :satelital,
-        ciudad_origen = :ciudad_origen,
-        direccion_descargue = :direccion_descargue,
-        sello = :sello,
-        numero_contenedor = :numero_contenedor,
-        link_localizador = :link_localizador,
-        usuario_satelital = :usuario_satelital,
-        clave_satelital = :clave_satelital,
-        ruta = :ruta
-        WHERE idservicio = :idservicio
-        ";
-        $resultado = $data_source->ejecutarActualizacion($sql,array(
-        ':id_conductor'=>$servicio->getId_conductor(),
-        ':id_vehiculo'=>$servicio->getId_vehiculo(),
-        ':id_cliente'=>$servicio->getId_cliente(),
-        ':id_empleado'=>$servicio->getId_empleado(),
-        ':manifiesto'=>$servicio->getManifiesto(),
-        ':fecha_creacion'=>$servicio->getFecha_creacion(),
-        ':fecha_fin'=>$servicio->getFecha_fin(),
-        ':estado'=>$servicio->getEstado(),
-        ':satelital'=>$servicio->getSatelital(),
-        ':ciudad_origen'=>$servicio->getCiudad_origen(),
-        ':direccion_descargue'=>$servicio->getDireccion_descargue(),
-        ':sello'=>$servicio->getSello(),
-        ':numero_contenedor'=>$servicio->getNumero_contenedor(),
-        ':link_localizador'=>$servicio->getLink_localizador(),
-        ':usuario_satelital'=>$servicio->getUsuario_satelital(),
-        ':clave_satelital'=>$servicio->getClave_satelital(),
-        ':ruta'=>$servicio->getRuta(),
-        ':idservicio'=>$servicio->getId_servicio()
-      )
-    );
-      return $resultado;
-    }
+    
 
-    public function cerrarServicio($id_servicio){
-      $data_source = new DataSource();
-      $sql = "UPDATE servicio SET estado = CERRADO,
-      WHERE idservicio = :idservicio";
-      $resultado = $data_source->ejecutarActualizacion($sql,array(
-      ':id_servicio'=>$id_servicio));
-    return $resultado;
-  }
-
-  }
-  ?>
+}
+?>
