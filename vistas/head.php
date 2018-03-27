@@ -35,6 +35,7 @@
   <link rel="stylesheet" href="../assets/css/fullcalendar/fullcalendar.css">
   <link rel="stylesheet" href="../assets/css/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
   <link rel="stylesheet" href="../assets/css/AdminLTE.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
 
 
 

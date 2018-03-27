@@ -73,9 +73,9 @@ $arrayServicios=$objServi->listaTodosServicios();
                   <td >".$arrayServicios[$clave]->getEstado()."</td>
                   <td >".$arrayServicios[$clave]->getFecha_creacion()."</td>
                   <td >".$arrayServicios[$clave]->getFecha_fin()."</td>
-                  <td>  <button type='button' id='verServicio' class='btn btn-primary'
+                  <td>  <button type='button' id='verServicio'  name='verServicio' class='btn btn-primary'
                   value='".$arrayServicios[$clave]->getId_servicio()."'>Ver Servico Completo</button>
-                  <button type='button' id='verBitacora' class='btn btn-info'
+                  <button type='button' id='verBitacora' name='verBitacora' class='btn btn-primary'
                   value='".$arrayServicios[$clave]->getId_servicio()."'>Bitacora</button>
                   </td>
                   </tr>";
@@ -92,3 +92,4 @@ $arrayServicios=$objServi->listaTodosServicios();
 
   </div>
   <script type="text/javascript" src="../assets/js/AdminLTE/servicios.js"></script>
+  <script type="text/javascript" src="../assets/js/AdminLTE/bitacora.js"></script>

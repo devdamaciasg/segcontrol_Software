@@ -6,6 +6,18 @@ require_once ($_SERVER['DOCUMENT_ROOT']."/segcontrol/model/conductor.php");
 require_once ($_SERVER['DOCUMENT_ROOT']."/segcontrol/model/vehiculo.php");
 class serviciosDAO{
 
+
+  public function numeroServiciosActivos(){
+  	$data_source = new DataSource();
+  	$data_table = $data_source->ejecutarConsulta("SELECT count(*) as 'n' FROM `servicio` WHERE estado='ACTIVO'");
+  	if(count($data_table) >= 1){
+       $n=$data_table[0]['n'];
+  	return $n;
+  }else{
+  	  return 0;
+    }
+  }
+
 public function listaServicios(){
 
     $data_source = new DataSource();
@@ -37,6 +49,70 @@ public function listaServicios(){
       }
       return $arrayServicios;
     }
+
+    public function listaServiciosActivos(){
+
+        $data_source = new DataSource();
+        $data_table = $data_source->ejecutarConsulta("SELECT * FROM `servicio` where estado = 'ACTIVO'");
+        $objServicios = null;
+        $arrayServicios = array();
+
+        foreach ($data_table as $clave => $valor) {
+          $objServicios = new servicio(
+            $data_table[$clave]["id_servicio"],
+            $data_table[$clave]["id_conductor"],
+            $data_table[$clave]["id_vehiculo"],
+            $data_table[$clave]["id_cliente"],
+            $data_table[$clave]["id_empleado"],
+            $data_table[$clave]["manifiesto"],
+            $data_table[$clave]["fecha_creacion"],
+            $data_table[$clave]["fecha_fin"],
+            $data_table[$clave]["estado"],
+            $data_table[$clave]["satelital"],
+            $data_table[$clave]["ciudad_origen"],
+            $data_table[$clave]["direccion_descargue"],
+            $data_table[$clave]["sello"],
+            $data_table[$clave]["numero_contenedor"],
+            $data_table[$clave]["link_localizador"],
+            $data_table[$clave]["usuario_satelital"],
+            $data_table[$clave]["clave_satelital"],
+            $data_table[$clave]["ruta"]);
+            array_push($arrayServicios, $objServicios);
+          }
+          return $arrayServicios;
+        }
+
+        public function listaServiciosCerrados(){
+
+            $data_source = new DataSource();
+            $data_table = $data_source->ejecutarConsulta("SELECT * FROM `servicio` where estado = 'CERRADO'");
+            $objServicios = null;
+            $arrayServicios = array();
+
+            foreach ($data_table as $clave => $valor) {
+              $objServicios = new servicio(
+                $data_table[$clave]["id_servicio"],
+                $data_table[$clave]["id_conductor"],
+                $data_table[$clave]["id_vehiculo"],
+                $data_table[$clave]["id_cliente"],
+                $data_table[$clave]["id_empleado"],
+                $data_table[$clave]["manifiesto"],
+                $data_table[$clave]["fecha_creacion"],
+                $data_table[$clave]["fecha_fin"],
+                $data_table[$clave]["estado"],
+                $data_table[$clave]["satelital"],
+                $data_table[$clave]["ciudad_origen"],
+                $data_table[$clave]["direccion_descargue"],
+                $data_table[$clave]["sello"],
+                $data_table[$clave]["numero_contenedor"],
+                $data_table[$clave]["link_localizador"],
+                $data_table[$clave]["usuario_satelital"],
+                $data_table[$clave]["clave_satelital"],
+                $data_table[$clave]["ruta"]);
+                array_push($arrayServicios, $objServicios);
+              }
+              return $arrayServicios;
+            }
 
 public function servicioId($id){
       $data_source = new DataSource();

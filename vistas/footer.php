@@ -16,6 +16,7 @@
 <script type="text/javascript" src="../assets/js/AdminLTE/main.js"></script>
 <script type="text/javascript" src="../assets/js/AdminLTE/menu.js"></script>
 <script type="text/javascript" src="../assets/js/AdminLTE/dashboard.js"></script>
+<script type="text/javascript" src="../assets/js/script.js"></script>
 <script type="text/javascript">
     $(function() {
         //Datemask dd/mm/yyyy
