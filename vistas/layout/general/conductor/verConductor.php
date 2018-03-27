@@ -5,7 +5,7 @@ $objConductor = new conductorController();
 $var = new conductorController();
 $var=$objConductor->ConductorId($id_conductor);
 ?>
-<div class="row">
+<div class="row" onload="botones()" >
   <div class="col-md-12">
     <div class="box">
       <div class="box-header">
@@ -54,9 +54,13 @@ $var=$objConductor->ConductorId($id_conductor);
           </div><!-- /.box-body -->
 
           <div class="box-footer">
-            <input type="submit" class="btn btn-primary" id="editar_conductor_main" value="Editar"/>
+            <div class="form-group">
+
+            <input type="submit" class="btn btn-primary" id="editar_conductor_main" name="editar_conductor_main" value="Editar"  />
+          </div>
+            <br>
             <div id="opciones_verConductor">
-            <input type="submit" class="btn btn-primary" id="actualizar_conductor_main" value="Actualizar"/>
+            <input type="submit" class="btn btn-primary" id="actualizar_conductor_main" name="actualizar_conductor_main" value="Actualizar"/>
             </div>
           </div>
         </form>

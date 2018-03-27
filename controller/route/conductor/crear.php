@@ -11,5 +11,5 @@ $telefono3 = $_POST['telefono3'];
  $var = new conductorController();
  $conductor = new conductor("",$cc,$nombre,$telefono1,$telefono2,$telefono3);
  $var->registrarConductor($conductor);
-
+ 
  ?>

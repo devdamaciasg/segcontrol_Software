@@ -14,7 +14,7 @@
       <div class="icon">
         <i class="ion ion-person-add"></i>
       </div>
-      <a href="#servicios" class="small-box-footer">
+      <a href="#" id="servicios_main" class="small-box-footer">
         Acceder <i class="fa fa-arrow-circle-right"></i>
       </a>
     </div>

@@ -46,6 +46,8 @@ $arrayConductor=$objConductor->listaConductor();
               <td >".$arrayConductor[$clave]->getTelefono3()."</td>
               <td>  <button type='button' id='verConductor' class='btn btn-primary'
                              value='".$arrayConductor[$clave]->getId_conductor()."'>Mostrar</button>
+                    <button type='button' id='verConductor' class='btn btn-danger'
+                                            value='".$arrayConductor[$clave]->getId_conductor()."'>Eliminar</button>
               </td>
             </tr>";
           }

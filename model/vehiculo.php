@@ -6,11 +6,11 @@ class vehiculo{
   private $marca;
   private $color;
   private $n_trailer;
-  
+
   public function __construct($id_vehiculo,$id_cliente,$placa,$marca,$color,$n_trailer){
     $this->id_vehiculo=$id_vehiculo;
     $this->placa=$placa;
-    $this->id_empleado=$id_empleado;
+    $this->$id_cliente=$id_cliente;
     $this->marca=$marca;
     $this->color=$color;
     $this->n_trailer=$n_trailer;

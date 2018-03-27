@@ -17,7 +17,7 @@ class vehiculoDao
     foreach ($data_table as $clave => $valor) {
         $objVehiculo = new vehiculo(
         $data_table[$clave]["id_vehiculo"],
-        $data_table[$clave]["id_cliente"]
+        $data_table[$clave]["id_cliente"],
         $data_table[$clave]["placa"],
         $data_table[$clave]["marca"],
         $data_table[$clave]["color"],
@@ -33,18 +33,18 @@ class vehiculoDao
       $data_table = $data_source->ejecutarConsulta("SELECT * FROM `vehiculo` where id_vehiculo = :id "
       ,array(':id'=>$id_vehiculo));
       $objVehiculo = null;
-      $arrayVehiculo = array();
-      foreach ($data_table as $clave => $valor) {
+      if(count($data_table)>0){
           $objVehiculo = new vehiculo(
-          $data_table[$clave]["id_vehiculo"],
-          $data_table[$clave]["id_cliente"]
-          $data_table[$clave]["placa"],
-          $data_table[$clave]["marca"],
-          $data_table[$clave]["color"],
-          $data_table[$clave]["n_trailer"]);
-          array_push($arrayVehiculo, $objConductor);
-        }
-        return $arrayVehiculo;
+          $data_table[0]["id_vehiculo"],
+          $data_table[0]["id_cliente"],
+          $data_table[0]["placa"],
+          $data_table[0]["marca"],
+          $data_table[0]["color"],
+          $data_table[0]["n_trailer"]);
+        return $objVehiculo;
+      }else{
+         return null;
+      }
       }
 
       public function listaVehiculoCli($id_cliente){
@@ -57,7 +57,7 @@ class vehiculoDao
         foreach ($data_table as $clave => $valor) {
             $objVehiculo = new vehiculo(
             $data_table[$clave]["id_vehiculo"],
-            $data_table[$clave]["id_cliente"]
+            $data_table[$clave]["id_cliente"],
             $data_table[$clave]["placa"],
             $data_table[$clave]["marca"],
             $data_table[$clave]["color"],

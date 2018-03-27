@@ -40,9 +40,15 @@ e.preventDefault();
      },
      success:  function (response) {
        $("#contenido").html(response);
+
         $("#smg_panel").html("");
-     }});
-});
+     }
+
+   });
+
+}
+
+);
 
 $(document).on('click','#guardar_conductor_main',function(e){
 console.log("agregar conductor ");
@@ -66,6 +72,37 @@ var params = { "cc" : cc ,"nombre" : nombre ,"telefono1" : telefono1 , "telefono
      },
      success:  function (response) {
        $("#contenido").html(response);
-        $("#smg_panel").html("");
-     }});
+       $("#smg_panel").html("");
+       regresar();
+     }
+
+   });
 });
+
+function regresar(){
+
+  $.ajax({
+    url:   '../vistas/layout/general/conductor/conductorMain.php',
+    type:  'post',
+    beforeSend: function () {
+      //mostramos gif "cargando"
+      //jQuery('#loading_spinner').show();
+      //antes de enviar la petición al fichero PHP, mostramos mensaje
+       $("#smg_panel").html("<ol class='breadcrumb'> <li><a><i class='fa fa-dashboard'></i> Cargando</a></li></ol>");
+    },
+    success:  function (response) {
+      $("#contenido").html(response);
+
+       $("#smg_panel").html("");
+    }
+
+  });
+
+}
+
+function botones() {
+  console.log('bine');
+  var actualizarBtn = document.getElementById("opciones_verConductor");
+  actualizarBtn.style.visibility  = 'hidden'; // No se ve
+  actualizarBtn.style.display = 'none'; // No ocupa espacio
+}
