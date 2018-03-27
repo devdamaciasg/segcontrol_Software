@@ -97,7 +97,7 @@ class servicio{
   public function getClave_satelital(){return $this->clave_satelital;}
 
   public function setRuta($ruta){$this->ruta = $ruta;}
-  public function getRuta(){return $this->ruta;
+  public function getRuta(){return $this->ruta;}
 
 
 

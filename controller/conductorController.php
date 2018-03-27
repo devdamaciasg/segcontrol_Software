@@ -1,9 +1,10 @@
 <?php
 require_once($_SERVER['DOCUMENT_ROOT']."/segcontrol/persistencia/usuariosDao.php");
 require_once($_SERVER['DOCUMENT_ROOT']."/segcontrol/persistencia/serviciosDao.php");
+require_once($_SERVER['DOCUMENT_ROOT']."/segcontrol/persistencia/conductorDao.php");
 require_once($_SERVER['DOCUMENT_ROOT']."/segcontrol/model/empleado.php");
 require_once($_SERVER['DOCUMENT_ROOT']."/segcontrol/model/cliente.php");
-require_once($_SERVER['DOCUMENT_ROOT']."/segcontrol/model/servicio.php");
+require_once($_SERVER['DOCUMENT_ROOT']."/segcontrol/model/servicios.php");
 require_once($_SERVER['DOCUMENT_ROOT']."/segcontrol/model/minuta.php");
 require_once($_SERVER['DOCUMENT_ROOT']."/segcontrol/model/conductor.php");
 require_once($_SERVER['DOCUMENT_ROOT']."/segcontrol/model/vehiculo.php");

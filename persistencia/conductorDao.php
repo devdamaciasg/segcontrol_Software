@@ -15,7 +15,7 @@ class conductorDao
     $arrayConductor = array();
 
     foreach ($data_table as $clave => $valor) {
-      $objConductor = new minuta(
+      $objConductor = new conductor(
         $data_table[$clave]["id_conductor"],
         $data_table[$clave]["cedula"],
         $data_table[$clave]["nombre_conductor"],
@@ -35,7 +35,7 @@ class conductorDao
       $objConductor = null;
       if(count($data_table)>0){
 
-         $objConductor = new minuta(
+         $objConductor = new conductor(
           $data_table[$clave]["id_conductor"],
           $data_table[$clave]["cedula"],
           $data_table[$clave]["nombre_conductor"],
@@ -55,7 +55,7 @@ class conductorDao
 
       public function registrarConductor(conductor $conductor){
         $data_source = new DataSource();
-        $sql = "INSERT INTO servicio_novedad VALUES (:id_conductor,:cedula,:nombre_conductor,:telefono1,:telefono2,:telefono3)";
+        $sql = "INSERT INTO conductor VALUES (:id_conductor,:cedula,:nombre_conductor,:telefono1,:telefono2,:telefono3)";
 
           $resultado = $data_source->ejecutarActualizacion($sql,array(
             ':id_conductor'=>$conductor->getId_conductor(),

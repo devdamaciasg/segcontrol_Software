@@ -38,14 +38,14 @@ $arrayConductor=$objConductor->listaConductor();
             <th >Telefono 3</th>
             <th colspan='2' >Accion</th>
             </tr>";
-            foreach ($arrayConductoras $clave => $valor) {
-              echo "<tr><td>".$arrayObj[$clave]->getCedula()."</td>
+            foreach ($arrayConductor as  $clave => $valor) {
+              echo "<tr><td>".$arrayConductor[$clave]->getCedula()."</td>
               <td >".$arrayConductor[$clave]->getNombre_conductor()."</td>
               <td >".$arrayConductor[$clave]->getTelefono1()."</td>
               <td >".$arrayConductor[$clave]->getTelefono1()."</td>
               <td >".$arrayConductor[$clave]->getTelefono1()."</td>
               <td>  <button type='button' id='verConductor' class='btn btn-primary'
-                             value='".$arrayObj[$clave]->getId_conductor()."'>Mostrar</button>
+                             value='".$arrayConductor[$clave]->getId_conductor()."'>Mostrar</button>
               </td>
             </tr>";
           }
