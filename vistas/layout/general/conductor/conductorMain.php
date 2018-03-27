@@ -42,8 +42,8 @@ $arrayConductor=$objConductor->listaConductor();
               echo "<tr><td>".$arrayConductor[$clave]->getCedula()."</td>
               <td >".$arrayConductor[$clave]->getNombre_conductor()."</td>
               <td >".$arrayConductor[$clave]->getTelefono1()."</td>
-              <td >".$arrayConductor[$clave]->getTelefono1()."</td>
-              <td >".$arrayConductor[$clave]->getTelefono1()."</td>
+              <td >".$arrayConductor[$clave]->getTelefono2()."</td>
+              <td >".$arrayConductor[$clave]->getTelefono3()."</td>
               <td>  <button type='button' id='verConductor' class='btn btn-primary'
                              value='".$arrayConductor[$clave]->getId_conductor()."'>Mostrar</button>
               </td>

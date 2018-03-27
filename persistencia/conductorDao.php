@@ -13,7 +13,7 @@ class conductorDao
     $data_table = $data_source->ejecutarConsulta("SELECT * FROM `conductor` ");
     $objConductor = null;
     $arrayConductor = array();
-
+    if(count($data_table)>0){
     foreach ($data_table as $clave => $valor) {
       $objConductor = new conductor(
         $data_table[$clave]["id_conductor"],
@@ -25,23 +25,27 @@ class conductorDao
         array_push($arrayConductor, $objConductor);
       }
       return $arrayConductor;
+    }else{
+      return null;
+    }
+
     }
 
     public function listaConductorId($id_conductor){
 
       $data_source = new DataSource();
-      $data_table = $data_source->ejecutarConsulta("SELECT * FROM `servicio_novedad` where id_conductor = :id "
+      $data_table = $data_source->ejecutarConsulta("SELECT * FROM `conductor` where id_conductor = :id "
       ,array(':id'=>$id_conductor));
       $objConductor = null;
       if(count($data_table)>0){
 
          $objConductor = new conductor(
-          $data_table[$clave]["id_conductor"],
-          $data_table[$clave]["cedula"],
-          $data_table[$clave]["nombre_conductor"],
-          $data_table[$clave]["telefono1"],
-          $data_table[$clave]["telefono2"],
-          $data_table[$clave]["telefono3"]);
+          $data_table[0]["id_conductor"],
+          $data_table[0]["cedula"],
+          $data_table[0]["nombre_conductor"],
+          $data_table[0]["telefono1"],
+          $data_table[0]["telefono2"],
+          $data_table[0]["telefono3"]);
             return $objConductor;
         }else{
              return null;
@@ -55,10 +59,9 @@ class conductorDao
 
       public function registrarConductor(conductor $conductor){
         $data_source = new DataSource();
-        $sql = "INSERT INTO conductor VALUES (:id_conductor,:cedula,:nombre_conductor,:telefono1,:telefono2,:telefono3)";
+        $sql = "INSERT INTO conductor VALUES (null,:cedula,:nombre_conductor,:telefono1,:telefono2,:telefono3)";
 
           $resultado = $data_source->ejecutarActualizacion($sql,array(
-            ':id_conductor'=>$conductor->getId_conductor(),
             ':cedula'=>$conductor->getCedula(),
             ':nombre_conductor'=>$conductor->getNombre_conductor(),
             ':telefono1'=>$conductor->getTelefono1(),
