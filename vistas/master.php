@@ -45,6 +45,9 @@ $sesion_clave=$sesion['clave'];
           <small>Ver 1.0 Alpha </small>
         </h1>
         <div id="smg_panel"></div>
+      
+
+
       </section>
         <!-- Main content -->
       <section class="content">

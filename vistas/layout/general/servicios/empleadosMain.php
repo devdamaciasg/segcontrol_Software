@@ -8,7 +8,6 @@
               </div><!-- /.box-header -->
               <div class="box-body">
                 <div class="row">
-
                   <div class="col-lg-3 col-xs-6">
                     <!-- small box -->
                     <div class="small-box bg-red">
@@ -97,9 +96,7 @@
           </div><!-- /.box-body -->
         </div>
       </div>
-
     </div>
-
   </div>
   <script type="text/javascript" src="../assets/js/AdminLTE/servicios.js"></script>
-  <script type="text/javascript" src="../assets/js/AdminLTE/bitacora.js"></script>
+  <script type="text/javascript" src="../assets/js/AdminLTE/bitacora.js"></script

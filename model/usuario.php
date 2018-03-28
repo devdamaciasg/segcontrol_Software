@@ -9,6 +9,14 @@ private $usuario;
 private $clave;
 private $estado;
 
+public function __construct($id_usuario,$id_rol,$usuario,$clave,$estado){
+	$this->id_usuario=$id_usuario;
+	$this->id_rol=$id_rol;
+	$this->usuario=$usuario;
+	$this->clave=$clave;
+	$this->estado=$estado;
+}
+
 
 public function setId_usuario($id_usuario){$this->id_usuario = $id_usuario;}
 public function getId_usuario(){return $this->id_usuario;}

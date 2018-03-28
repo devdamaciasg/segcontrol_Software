@@ -23,7 +23,7 @@ $ciudad,$fijo,$celular1,$celular2,$email,$email2,$email3){
 	$this->id_empleado=$id_empleado;
 	$this->id_usuario=$id_usuario;
 	$this->nombre=$nombre;
-  	$this->razon_social=$razon_social;
+  $this->razon_social=$razon_social;
 	$this->tipo_documento=$tipo_documento;
 	$this->numero_documento=$numero_documento;
 	$this->direccion=$direccion;
@@ -32,8 +32,8 @@ $ciudad,$fijo,$celular1,$celular2,$email,$email2,$email3){
 	$this->celular1=$celular1;
 	$this->celular2=$celular2;
 	$this->email=$email;
-  	$this->email2=$email2;
-    	$this->email3=$email2;
+  $this->email2=$email2;
+  $this->email3=$email2;
   }
 
 public function setId_empleado($id_empleado){$this->id_empleado = $id_empleado;}
