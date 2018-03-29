@@ -13,7 +13,7 @@ class usuariosDao
 		if($rol == "administrador"){$rol=1;}else{
 			if($rol == "cliente"){$rol=3;}else{$rol=2;}}
 		$sql ="UPDATE usuario SET 'usuario' = :usuario,
-		'estado' = :estado,'id_rol' = :rol WHERE 'usuario.id_usuario' = :id";
+		'estado' = :estado,'id_rol' = :rol WHERE 'id_usuario' = :id";
 		$resultado = $data_source->ejecutarActualizacion($sql,array(
 			':usuario'=> $usuario,
 			':estado' => $estado,
