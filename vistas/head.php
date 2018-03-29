@@ -1,6 +1,6 @@
 <head>
   <meta charset="utf-8"/>
-  <title>SEG control SAS</title>
+  <title>SEGCONTROL GPS</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 <meta content="yes" name="apple-mobile-web-app-capable">
@@ -36,7 +36,12 @@
   <link rel="stylesheet" href="../assets/css/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
   <link rel="stylesheet" href="../assets/css/AdminLTE.css">
   <link rel="stylesheet" href="../assets/css/style.css">
-
+<style type="text/css">
+ .fondo{
+   background-image: url("../recursos/imagenes/fINTECH-FINANZAS-bbva-1920x0-c-f - copia (2).jpg");
+   background-repeat: no-repeat;
+   background-position: -110px;}
+</style>
 
 
 </head>

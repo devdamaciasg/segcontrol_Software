@@ -1,0 +1,159 @@
+<?php
+require_once ($_SERVER['DOCUMENT_ROOT']."/segcontrol/persistencia/DataSource.php");
+require_once ($_SERVER['DOCUMENT_ROOT']."/segcontrol/model/servicios.php");
+require_once ($_SERVER['DOCUMENT_ROOT']."/segcontrol/model/minuta.php");
+require_once ($_SERVER['DOCUMENT_ROOT']."/segcontrol/model/conductor.php");
+require_once ($_SERVER['DOCUMENT_ROOT']."/segcontrol/model/vehiculo.php");
+require_once ($_SERVER['DOCUMENT_ROOT']."/segcontrol/model/empleado.php");
+require_once ($_SERVER['DOCUMENT_ROOT']."/segcontrol/model/usuario.php");
+require_once ($_SERVER['DOCUMENT_ROOT']."/segcontrol/model/cliente.php");
+class clienteDao
+{
+
+  public function listaCliente(){
+
+    $data_source = new DataSource();
+    $data_table = $data_source->ejecutarConsulta("SELECT * FROM `cliente` ");
+    $objClientes = null;
+    $arrayClientes = array();
+
+    foreach ($data_table as $clave => $valor) {
+    $objEmpleado = new empleado(
+        $data_table[$clave]["id_empleado"],
+        $data_table[$clave]["id_usuario"],
+        $data_table[$clave]["razon_social"],
+        $data_table[$clave]["nombre_contacto"],
+        $data_table[$clave]["tipo_documento"],
+        $data_table[$clave]["numero_documento"],
+        $data_table[$clave]["direccion"],
+        $data_table[$clave]["ciudad"],
+        $data_table[$clave]["fijo"],
+        $data_table[$clave]["celular1"],
+        $data_table[$clave]["celular2"],
+        $data_table[$clave]["email1"],
+        $data_table[$clave]["email2"],
+        $data_table[$clave]["email3"]();
+        array_push(  $arrayClientes, $objClientes);
+      }
+      return   $arrayClientes;
+    }
+
+    public function clienteId($id_cliente){
+
+      $data_source = new DataSource();
+      $data_table = $data_source->ejecutarConsulta("SELECT * FROM `cliente` where id_cliente = :id "
+      ,array(':id'=>$id_cliente));
+      $objClientes = null;
+      $arrayClientes = array();
+
+      foreach ($data_table as $clave => $valor) {
+      $objEmpleado = new empleado(
+          $data_table[$clave]["id_empleado"],
+          $data_table[$clave]["id_usuario"],
+          $data_table[$clave]["razon_social"],
+          $data_table[$clave]["nombre_contacto"],
+          $data_table[$clave]["tipo_documento"],
+          $data_table[$clave]["numero_documento"],
+          $data_table[$clave]["direccion"],
+          $data_table[$clave]["ciudad"],
+          $data_table[$clave]["fijo"],
+          $data_table[$clave]["celular1"],
+          $data_table[$clave]["celular2"],
+          $data_table[$clave]["email1"],
+          $data_table[$clave]["email2"],
+          $data_table[$clave]["email3"]();
+          array_push(  $arrayClientes, $objClientes);
+        }
+        return $arrayClientes;
+      }
+
+      public function empleadoIdUsuario($id_cliente){
+
+        $data_source = new DataSource();
+        $objConductor = null;
+        $arrayConductor = array();
+        $data_table = $data_source->ejecutarConsulta("SELECT * FROM `cliente` where id_usuario = :id "
+        ,array(':id'=>$id_cliente));
+
+        $objClientes = null;
+        $arrayClientes = array();
+
+        foreach ($data_table as $clave => $valor) {
+        $objEmpleado = new empleado(
+            $data_table[$clave]["id_empleado"],
+            $data_table[$clave]["id_usuario"],
+            $data_table[$clave]["razon_social"],
+            $data_table[$clave]["nombre_contacto"],
+            $data_table[$clave]["tipo_documento"],
+            $data_table[$clave]["numero_documento"],
+            $data_table[$clave]["direccion"],
+            $data_table[$clave]["ciudad"],
+            $data_table[$clave]["fijo"],
+            $data_table[$clave]["celular1"],
+            $data_table[$clave]["celular2"],
+            $data_table[$clave]["email1"],
+            $data_table[$clave]["email2"],
+            $data_table[$clave]["email3"]();
+            array_push(  $arrayClientes, $objClientes);
+          }
+          return $arrayClientes;
+        }
+
+
+      public function registrarCliente(empleado $empleado){
+        $data_source = new DataSource();
+        $sql2 = "INSERT INTO cliente VALUES (null,:id_usuario,:nombre,:razon,:tipo_documento,:numero_documento,
+          :direccion,:ciudad,:fijo,:celular1,:celular2,:email1,:email2,:email3)";
+          $resultado2 = $data_source->ejecutarActualizacion($sql2,array(
+            ':idusuario'=>$empleado->ID_ultimo_Usuario(),
+            ':nombre'=>$empleado->getNombre(),
+            ':razon'=>$empleado->getRazon_social(),
+            ':tipo_documento'=>$empleado->getTipo_documento(),
+            ':numero_documento'=> $empleado->getNumero_documento(),
+            ':direccion'=>$empleado->getDireccion(),
+            ':ciudad'=>$empleado->getCiudad(),
+            ':fijo'=>$empleado->getFijo(),
+            ':celular1'=>$empleado->getCelular1(),
+            ':celular2'=>$empleado->getCelular2(),
+            ':email1'=>$empleado->getEmail(),
+            ':email2'=>$empleado->getEmail2(),
+            ':email3'=>$empleado->getEmail3())
+          );
+        return $resultado;
+      }
+
+      public function actualizarCliente(Cliente $cliente){
+        $data_source = new DataSource();
+        $sql = "UPDATE cliente SET
+        id_usuario = :id_usuario,
+        nombre_cliente = :nombre,
+        razon_social = :razon,
+        tipo_documento = :tipo_documento,
+        numero_documento = :numero_documento,
+        ciudad = :  ciudad,
+        direccion= :direccion,
+        fijo = :fijo,
+        email1 = :email1,
+        email2 = :email2,
+        email3 = :email3,
+        celular1 = :celular1,
+        celular2 = :celular2 ";
+        $resultado2 = $data_source->ejecutarActualizacion($sql2,array(
+          ':idusuario'=>$cliente->ID_ultimo_Usuario(),
+          ':nombre'=>$cliente->getNombre(),
+          ':razon'=>$cliente>getRazon_social(),
+          ':tipo_documento'=>$cliente->getTipo_documento(),
+          ':numero_documento'=>$cliente->getNumero_documento(),
+          ':direccion'=>$cliente->getDireccion(),
+          ':ciudad'=>$cliente->getCiudad(),
+          ':fijo'=>$cliente->getFijo(),
+          ':celular1'=>$cliente->getCelular1(),
+          ':celular2'=>$cliente->getCelular2(),
+          ':email1'=>$cliente->getEmail(),
+          ':email2'=>$cliente->getEmail2(),
+          ':email3'=>$cliente->getEmail3())
+        );
+      return $resultado2;
+    }
+  }
+  ?>

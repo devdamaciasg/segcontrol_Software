@@ -10,7 +10,6 @@ class usuariosDao
 	public function CargarPerfil($id,$tabla){
 		$data_source = new DataSource();
 		$sesion = array();
-
 		if($tabla == 'asistente' || $tabla == 'administrador'){
 			$data = $data_source->ejecutarConsulta(" SELECT *
 				FROM empleado JOIN usuario  on (empleado.id_usuario=usuario.id_usuario)
@@ -35,12 +34,9 @@ class usuariosDao
 							array_push($sesion, $empleadoObj);
 						}
 						return $sesion;
-					}else{
-						return null;
-					}
+					}else{return null;}
 				}//asistente o administrador
-				else
-				{
+				else{
 					$data = $data_source->ejecutarConsulta(" SELECT *
 						FROM cliente JOIN usuario  on (cliente.id_usuario=usuario.id_usuario)
 						JOIN rol ON(usuario.id_rol=rol.id_rol)
@@ -65,67 +61,45 @@ class usuariosDao
 									array_push($sesion, $clienteObj);
 								}
 								return $sesion;
-							}else{
-								return null;
-							}
+							}else{return null;}
 						}//cliente
 						return false;
-
-
 					}//end method
-					public function actualizarPerfil($usuario,$rol,$estado,$id){
+	public function actualizarPerfil($usuario,$rol,$estado,$id){
+		$data_source = new DataSource();
+		if($rol == "administrador"){$rol=1;}else{
+			if($rol == "cliente"){$rol=3;}else{$rol=2;}}
+		$sql ="UPDATE usuario SET 'usuario' = :usuario,
+		'estado' = :estado,'id_rol' = :rol WHERE 'usuario.id_usuario' = :id";
+		$resultado = $data_source->ejecutarActualizacion($sql,array(
+			':usuario'=> $usuario,
+			':estado' => $estado,
+			':id' => $id,
+			':id_rol' =>  $rol));
+			return $resultado;
+		}
+	public function cambioClave($id,$clave){
+		$data_source = new DataSource();
+		$sql ="UPDATE usuario SET  'clave' = :clave
+		WHERE 'id_usuario' = :id";
+		$resultado = $data_source->ejecutarActualizacion($sql,array(
+			':id'=> $id,
+			':clave' => $clave));
+			return $resultado;
+		}
 
-						$data_source = new DataSource();
-						if($rol == "administrador"){
-							$rol=1;
-						}else{
-							if($rol == "cliente"){
-								$rol=3;
-							}else{
-								$rol=2;
-							}
-						}
-						$sql ="UPDATE usuario SET 'usuario' = :usuario,
-						'estado' = :estado,
-						'id_rol' = :rol
-						WHERE 'usuario.id_usuario' = :id
-						";
-						$resultado = $data_source->ejecutarActualizacion($sql,array(
-							':usuario'=> $usuario,
-							':estado' => $estado,
-							':id' => $id,
-							':id_rol' =>  $rol));
-							return $resultado;
-						}
-
-						public function cambioClave($id,$clave){
-							$data_source = new DataSource();
-							$sql ="UPDATE usuario SET  'clave' = :clave
-							WHERE 'id_usuario' = :id";
-							$resultado = $data_source->ejecutarActualizacion($sql,array(
-								':id'=> $id,
-								':clave' => $clave));
-								return $resultado;
-							}
-
-							public function cambioFoto($id,$foto,$tabla){
-								if($tabla == 'asistente' || $tabla == 'administrador'){
-									$tabla ='empleado';
-								}else{
-									$tabla = 'cliente';
-								}
-								$data_source = new DataSource();
-								$sql ="UPDATE :tabla SET  'foto' = :foto
-								WHERE :tabla = :id";
-								$resultado = $data_source->ejecutarActualizacion($sql,array(
-									':id'=> $id,
-									':foto' => $foto,
-									':tabla'=>$tabla));
-									return $resultado;
-								}
-
-
-
+	public function cambioFoto($id,$foto,$tabla){
+		if($tabla == 'asistente' || $tabla == 'administrador'){
+			$tabla ='empleado';}else{$tabla = 'cliente';}
+		$data_source = new DataSource();
+		$sql ="UPDATE :tabla SET  'foto' = :foto
+		WHERE :tabla = :id";
+		$resultado = $data_source->ejecutarActualizacion($sql,array(
+			':id'=> $id,
+			':foto' => $foto,
+			':tabla'=>$tabla));
+			return $resultado;
+		}
 	public function guardarUsuario(usuario $usuario,cliente $perfil,empleado $perfil2,$tabla){
 		$data_source = new DataSource();
 		$sql = "INSERT INTO usuario VALUES (null,:id_rol,:usuario,:clave,:estado)";

@@ -1,3 +1,8 @@
+.fondo{
+      background-image: url("../recursos/imagenes/iab-global-network-644x429.jpg");
+     background-repeat: no-repeat;
+}
+
 .Body {
     font-family: 'Raleway', sans-serif;
     margin: 0px;
