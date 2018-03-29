@@ -67,11 +67,10 @@ class clienteDao
         return $arrayClientes;
       }
 
-      public function empleadoIdUsuario($id_cliente){
+      public function clienteIdUsuario($id_cliente){
 
         $data_source = new DataSource();
-        $objConductor = null;
-        $arrayConductor = array();
+
         $data_table = $data_source->ejecutarConsulta("SELECT * FROM `cliente` where id_usuario = :id "
         ,array(':id'=>$id_cliente));
 
@@ -79,7 +78,7 @@ class clienteDao
         $arrayClientes = array();
 
         foreach ($data_table as $clave => $valor) {
-        $objEmpleado = new empleado(
+        $objClientes = new cliente(
             $data_table[$clave]["id_empleado"],
             $data_table[$clave]["id_usuario"],
             $data_table[$clave]["razon_social"],
@@ -93,7 +92,7 @@ class clienteDao
             $data_table[$clave]["celular2"],
             $data_table[$clave]["email1"],
             $data_table[$clave]["email2"],
-            $data_table[$clave]["email3"]();
+            $data_table[$clave]["email3"]);
             array_push(  $arrayClientes, $objClientes);
           }
           return $arrayClientes;
