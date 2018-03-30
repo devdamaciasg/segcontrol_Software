@@ -1,7 +1,7 @@
 <header class="header">
   <a href="index.html" class="logo">
     <!-- Add the class icon to your logo image or logo icon to add the margining -->
-    <h3 class="header">SEG control SAS</h3>
+    <h3 class="header">SEGCONTROL GPS</h3>
   </a>
   <!-- Header Navbar: style can be found in header.less -->
   <nav class="navbar navbar-static-top" role="navigation">

@@ -35,35 +35,5 @@
 
 
       <?php require_once("footer.php");?>
-      <script type="text/javascript">
-      time();
-      function time(){
-        var tiempo = new Date();
-        var hora = tiempo.getHours();
-        var minuto = tiempo.getMinutes();
-        var segundo = tiempo.getSeconds();
-        var carga =hora+":"+minuto;
-
-        if(carga = '17:50'){
-        document.getElementById('smg').innerHTML ='Cargando en servidor 51%';
-      }else {
-        if (carga = '16:40') {
-          document.getElementById('smg').innerHTML ='Cargando en servidor 67%';
-        }else {
-          if (carga = '20:10') {
-            document.getElementById('smg').innerHTML ='Cargando en servidor 71%';
-          }else {
-            if (carga = '22:10') {
-              document.getElementById('smg').innerHTML ='Cargando en servidor 83%';
-            }
-          }
-        }
-      }
-
-    }
-      function cargando(){
-        alert('cargando plataforma espere');
-      }
-      </script>
     </body>
 </html>

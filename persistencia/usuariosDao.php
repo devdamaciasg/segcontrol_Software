@@ -8,6 +8,7 @@ require_once ($_SERVER['DOCUMENT_ROOT']."/segcontrol/model/clienteUsuario.php");
 class usuariosDao
 {
 	public function validadSesion($u,$c){
+		echo $u." ".$c;
 
 		$data_source = new DataSource();
 
@@ -15,16 +16,16 @@ class usuariosDao
 		// usuario.estado as 'estado',cliente.id_cliente as 'tipo', cliente.nombre_contacto as 'nombre'
 		// FROM cliente JOIN usuario  on (cliente.id_usuario=usuario.id_usuario)JOIN rol ON(usuario.id_rol=rol.id_rol)
 		// where (usuario.usuario = :u and usuario.clave = :c) AND usuario.estado='ACTIVO' ",array(':u'=>$u,':c'=>$c));
-		$data_sesion_cliente = $data_source->ejecutarConsulta(" SELECT usuario.id_usuario as 'id' , usuario.rol as 'rol' ,
- 		usuario.estado as 'estado', usuario.clave as 'clave',  usuario.usuario as 'nombre'
- 		FROM cliente JOIN usuario  on (cliente.id_usuario=usuario.id_usuario)JOIN rol ON(usuario.id_rol=rol.id_rol)
- 		where (usuario.usuario = :u and usuario.clave = :c) AND usuario.estado='ACTIVO' ",array(':u'=>$u,':c'=>$c))
+		$data_sesion_cliente = $data_source->ejecutarConsulta(" SELECT 'usuario.id_usuario' as 'id' , 'usuario.rol' as 'rol' ,
+ 		'usuario.estado' as 'estado', 'usuario.clave' as 'clave',  'usuario.usuario' as 'nombre'
+ 		FROM cliente JOIN usuario  on ('cliente.id_usuario'='usuario.id_usuario')JOIN rol ON('usuario.id_rol'='rol.id_rol')
+ 		where ('usuario.usuario' = :u and 'usuario.clave' = :c) AND 'usuario.estado'='ACTIVO' ",array(':u'=>$u,':c'=>$c));
 
 
-		$data_sesion_empleado = $data_source->ejecutarConsulta(" SELECT SELECT usuario.id_usuario as 'id' , usuario.rol as 'rol' ,
+		$data_sesion_empleado = $data_source->ejecutarConsulta(" SELECT usuario.id_usuario as 'id' , usuario.id_rol as 'rol' ,
  		usuario.estado as 'estado', usuario.clave as 'clave',  usuario.usuario as 'nombre'
 		FROM empleado JOIN usuario  on (empleado.id_usuario=usuario.id_usuario)JOIN rol ON(usuario.id_rol=rol.id_rol)
-		where (usuario.usuario = :u and usuario.clave = :c) AND usuario.estado='ACTIVO'",array(':u'=>$u,':c'=>$c));
+		where (usuario.usuario = :u and usuario.clave = :c) AND usuario.estado='ACTIVO' ",array(':u'=>$u,':c'=>$c) );
 
 
 
@@ -36,7 +37,7 @@ class usuariosDao
 					$data_sesion_empleado[0]["nombre"],
 					$data_sesion_empleado[0]["clave"],
 					$data_sesion_empleado[0]["estado"]);
-			return $sesion;
+			return $objUsu;
 		}else{
 
 			if(count($data_sesion_cliente) >= 1){
@@ -47,7 +48,7 @@ class usuariosDao
 							$data_sesion_empleado[0]["nombre"],
 							$data_sesion_empleado[0]["clave"],
 							$data_sesion_empleado[0]["estado"]);
-				return $sesion;
+				return $objUsu;
 			}else{
 
 				return null;

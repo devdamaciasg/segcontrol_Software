@@ -1,12 +1,12 @@
 <?php
-require_once($_SERVER['DOCUMENT_ROOT']."/segcontrol/controller/usuarioController.php");
+require_once($_SERVER['DOCUMENT_ROOT']."/segcontrol/controller/usuariosController.php");
 require_once($_SERVER['DOCUMENT_ROOT']."/segcontrol/controller/clienteController.php");
 require_once($_SERVER['DOCUMENT_ROOT']."/segcontrol/controller/empleadoController.php");
 
-$sesion=unserialize($_GET["array"]);
-$Con = new
-$rol=$sesion['rol'];
-$sesion_id=$sesion['id_usuario'];
+$sesion=unserialize(urldecode($_GET["array"]));
+
+$rol=$sesion->getId_rol();
+$sesion_id=$sesion->getId_usuario();
 if(intval($rol) == 1 ){
   $sesion_rol="administrador";
 }else{

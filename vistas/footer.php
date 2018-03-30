@@ -13,7 +13,7 @@
 <script type="text/javascript" src="../assets/js/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
 <script type="text/javascript" src="../assets/js/AdminLTE/app.js"></script>
 <script type="text/javascript" src="../assets/js/plugins/iCheck/icheck.min.js"></script>
-<script type="text/javascript" src="../assets/js/AdminLTE/main.js"></script>
+<script type="text/javascript" src="../assets/js/AdminLTE/sesion.js"></script>
 <script type="text/javascript" src="../assets/js/AdminLTE/menu.js"></script>
 <script type="text/javascript" src="../assets/js/AdminLTE/dashboard.js"></script>
 <script type="text/javascript" src="../assets/js/script.js"></script>
