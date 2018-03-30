@@ -23,7 +23,7 @@
                 </div>
                 <div class="footer">
                     <button type="submit" class="btn bg-olive btn-block"
-                    id="" name="" onload="cargando()" >Validar</button>
+                    id="validarSesion" name="validarSesion"  >Validar</button>
 
                     <p><a id="olvidoClave" href="#" name="olvidoClave" >Olvide mi contraseña !</a></p>
 

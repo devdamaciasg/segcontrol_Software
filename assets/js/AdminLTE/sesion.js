@@ -10,12 +10,11 @@
  e.preventDefault();
  var user=document.getElementById("usuario").value;
  var pass=document.getElementById("clave").value;
- console.log(user+" "+pass);
  var params = { "usuario" : user, "clave" : pass };
  		//llamada al fichero PHP con AJAX
  		$.ajax({
  			data:   params,
- 			url:   '../controller/route/sesionRoute.php',
+ 			url:   '../controller/route/sesion/sesionRoute.php',
  			type:  'post',
  			beforeSend: function () {
  				//mostramos gif "cargando"

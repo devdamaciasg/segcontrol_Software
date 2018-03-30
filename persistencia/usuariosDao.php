@@ -7,6 +7,55 @@ require_once ($_SERVER['DOCUMENT_ROOT']."/segcontrol/model/clienteUsuario.php");
 
 class usuariosDao
 {
+	public function validadSesion($u,$c){
+
+		$data_source = new DataSource();
+
+		// $data_sesion_cliente = $data_source->ejecutarConsulta(" SELECT usuario.id_usuario as 'id' ,rol.nombre_rol as 'rol' ,
+		// usuario.estado as 'estado',cliente.id_cliente as 'tipo', cliente.nombre_contacto as 'nombre'
+		// FROM cliente JOIN usuario  on (cliente.id_usuario=usuario.id_usuario)JOIN rol ON(usuario.id_rol=rol.id_rol)
+		// where (usuario.usuario = :u and usuario.clave = :c) AND usuario.estado='ACTIVO' ",array(':u'=>$u,':c'=>$c));
+		$data_sesion_cliente = $data_source->ejecutarConsulta(" SELECT usuario.id_usuario as 'id' , usuario.rol as 'rol' ,
+ 		usuario.estado as 'estado', usuario.clave as 'clave',  usuario.usuario as 'nombre'
+ 		FROM cliente JOIN usuario  on (cliente.id_usuario=usuario.id_usuario)JOIN rol ON(usuario.id_rol=rol.id_rol)
+ 		where (usuario.usuario = :u and usuario.clave = :c) AND usuario.estado='ACTIVO' ",array(':u'=>$u,':c'=>$c))
+
+
+		$data_sesion_empleado = $data_source->ejecutarConsulta(" SELECT SELECT usuario.id_usuario as 'id' , usuario.rol as 'rol' ,
+ 		usuario.estado as 'estado', usuario.clave as 'clave',  usuario.usuario as 'nombre'
+		FROM empleado JOIN usuario  on (empleado.id_usuario=usuario.id_usuario)JOIN rol ON(usuario.id_rol=rol.id_rol)
+		where (usuario.usuario = :u and usuario.clave = :c) AND usuario.estado='ACTIVO'",array(':u'=>$u,':c'=>$c));
+
+
+
+		if(count($data_sesion_empleado) >= 1){
+
+					$objUsu  = new usuario(
+					$data_sesion_empleado[0]["id"],
+					$data_sesion_empleado[0]["rol"],
+					$data_sesion_empleado[0]["nombre"],
+					$data_sesion_empleado[0]["clave"],
+					$data_sesion_empleado[0]["estado"]);
+			return $sesion;
+		}else{
+
+			if(count($data_sesion_cliente) >= 1){
+
+							$objUsu  = new usuario(
+							$data_sesion_empleado[0]["id"],
+							$data_sesion_empleado[0]["rol"],
+							$data_sesion_empleado[0]["nombre"],
+							$data_sesion_empleado[0]["clave"],
+							$data_sesion_empleado[0]["estado"]);
+				return $sesion;
+			}else{
+
+				return null;
+			}
+		}
+
+	}//end method
+
 
 	public function actualizarPerfil($usuario,$rol,$estado,$id){
 		$data_source = new DataSource();
@@ -53,6 +102,7 @@ class usuariosDao
       return $resultado;
 
 			}//end method
+
 	public function ID_ultimo_Usuario(){
 		$data_source = new DataSource();
 		$data_table = $data_source->ejecutarConsulta("SELECT * FROM `usuario` ORDER BY `usuario`.`id_usuario` DESC");
@@ -61,7 +111,7 @@ class usuariosDao
 			return $ultimo_id;
 		}else{return 0;}
 	}
-	public function Nuempleados(){
+	public function Nempleados(){
 		$data_source = new DataSource();
 		$data_table = $data_source->ejecutarConsulta("SELECT COUNT(id_empleado) as 'n' FROM `empleado` ORDER BY id_empleado  ASC");
 		if(count($data_table) >= 1){

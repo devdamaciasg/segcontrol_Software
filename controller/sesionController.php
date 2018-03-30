@@ -1,26 +1,22 @@
 
 <?php
-require_once($_SERVER['DOCUMENT_ROOT']."/segcontrol/persistencia/sesionDao.php");
+require_once($_SERVER['DOCUMENT_ROOT']."/segcontrol/persistencia/usuarioDao.php");
 
 class sesionController{
 
   public function validarSesion($u,$c){
-    $s = new sesionDAO();
+    $s = new usuarioDAO();
     $obj = $s->validadSesion($u,$c);
     if(is_null($obj) ){
         echo  "<span> No se encuentra el usuario o la contraseña es incorrecta </span>";
     }else{
-      $cookie = array(
+      $cookie = new usuario(
         "id_usuario" => $obj[0]->getId_usuario(),
-        "rol" => $obj[0]->getRol(),
-        "estado" => $obj[0]->getEstado(),
-        "id_sesion_tipo" => $obj[0]->getId_sesion_tipo(),
-        "nombre" => $obj[0]->getNombre(),
-        "foto" => $obj[0]->getFoto(),
-        "clave" => $obj[0]->getClave()
-
+        "rol" => $obj[0]->getId_rol(),
+        "usuario" => $obj[0]->getUsuario(),
+        "clave" => $obj[0]->getClave(),
+        "estado" => $obj[0]->getEstado()
       );
-
       //$url="master.php?id_usuario=".$obj['id']."&rol=".$obj['rol']."&nombre=".$obj['nombre']."&estado=".$obj['estado']."&id_sesion_tipo=".$obj['id_sesion_tipo'];
       $url ="master.php?array=".serialize($cookie);
       echo  "<script>window.location.replace('".$url."');</script> ";

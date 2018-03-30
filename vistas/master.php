@@ -1,12 +1,19 @@
 <?php
+require_once($_SERVER['DOCUMENT_ROOT']."/segcontrol/controller/usuarioController.php");
+require_once($_SERVER['DOCUMENT_ROOT']."/segcontrol/controller/clienteController.php");
+require_once($_SERVER['DOCUMENT_ROOT']."/segcontrol/controller/empleadoController.php");
+
 $sesion=unserialize($_GET["array"]);
-$sesion_nombre=$sesion['nombre'];
-$sesion_rol=$sesion['rol'];
-$sesion_tipo=$sesion['id_sesion_tipo'];
+$Con = new
+$rol=$sesion['rol'];
 $sesion_id=$sesion['id_usuario'];
-$sesion_estado=$sesion['estado'];
-$sesion_foto=$sesion['foto'];
-$sesion_clave=$sesion['clave'];
+if(intval($rol) == 1 ){
+  $sesion_rol="administrador";
+}else{
+  if(intval($rol) == 2){
+    $sesion_rol="asistente";
+  }else{$sesion_rol="cliente";}
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -14,10 +21,6 @@ $sesion_clave=$sesion['clave'];
 <body class="skin-black">
   <input id="sesionHidden" name="sesionHidden" type="hidden" value="<?php echo $sesion_id ?>" />
   <input id="rolHidden" name="rolHidden" type="hidden" value="<?php echo $sesion_rol ?>" />
-  <input id="estadoHidden" name="estadoHidden" type="hidden" value="<?php echo $sesion_estado ?>" />
-  <input id="usuarioHidden" name="usuarioHidden" type="hidden" value="<?php echo $sesion_nombre ?>" />
-  <input id="claveHidden" name="claveHidden" type="hidden" value="<?php echo $sesion_clave ?>" />
-
   <?php require_once("topbar.php");?>
 
   <div  id="app" class="wrapper row-offcanvas row-offcanvas-left">
@@ -45,7 +48,7 @@ $sesion_clave=$sesion['clave'];
           <small>Ver 1.0 Alpha </small>
         </h1>
         <div id="smg_panel"></div>
-      
+
 
 
       </section>
