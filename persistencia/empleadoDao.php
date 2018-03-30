@@ -42,10 +42,6 @@ class empleadoDao
       $data_source = new DataSource();
       $data_table = $data_source->ejecutarConsulta("SELECT * FROM `empleado` where id_empleado = :id "
       ,array(':id'=>$id_empleado));
-      $objConductor = null;
-      $arrayConductor = array();
-
-      foreach ($data_table as $clave => $valor) {
       $objEmpleado = new empleado(
           $data_table[$clave]["id_empleado"],
           $data_table[$clave]["id_usuario"],
@@ -60,9 +56,7 @@ class empleadoDao
           $data_table[$clave]["celular3"],
           $data_table[$clave]["email"],
           $data_table[$clave]["foto"]);
-          array_push($arrayEmpleado, $objEmpleado);
-        }
-        return $arrayEmpleado;
+        return $objEmpleado;
       }
 
       public function empleadoIdUsuario($id_usuario){

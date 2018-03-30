@@ -4,6 +4,12 @@ require_once($_SERVER['DOCUMENT_ROOT']."/segcontrol/controller/clienteController
 require_once($_SERVER['DOCUMENT_ROOT']."/segcontrol/controller/empleadoController.php");
 
 $sesion=unserialize(urldecode($_GET["array"]));
+$ConCli = new clienteController();
+$ConEmp = new EmpleadoController();
+if(intval($rol)==1){
+  $obj = $ConEmp->empleadoIdUsuario($id_usuario);
+  
+}
 
 $rol=$sesion->getId_rol();
 $sesion_id=$sesion->getId_usuario();
