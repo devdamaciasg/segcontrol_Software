@@ -4,22 +4,28 @@ require_once($_SERVER['DOCUMENT_ROOT']."/segcontrol/controller/clienteController
 require_once($_SERVER['DOCUMENT_ROOT']."/segcontrol/controller/empleadoController.php");
 
 $sesion=unserialize(urldecode($_GET["array"]));
-$ConCli = new clienteController();
-$ConEmp = new EmpleadoController();
-if(intval($rol)==1){
-  $obj = $ConEmp->empleadoIdUsuario($id_usuario);
-  
-}
 
 $rol=$sesion->getId_rol();
 $sesion_id=$sesion->getId_usuario();
-if(intval($rol) == 1 ){
+
+if(intval($rol)==1){
   $sesion_rol="administrador";
+  $ConEmp = new EmpleadoController();
+  $obj = $ConEmp->empleadoIdUsuario($sesion_id);
+
 }else{
-  if(intval($rol) == 2){
+  if(intval($rol)==2){
     $sesion_rol="asistente";
-  }else{$sesion_rol="cliente";}
+    $ConEmp = new EmpleadoController();
+    $obj = $ConEmp->empleadoIdUsuario($sesion_id);
+
+  }else{
+    $sesion_rol="cliente";
+    $ConCli = new clienteController();
+    $obj = $ConCli->clienteIdUsuario($sesion_id);
+  }
 }
+
 ?>
 <!DOCTYPE html>
 <html>
