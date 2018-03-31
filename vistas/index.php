@@ -17,7 +17,7 @@
                         <input type="password" name="clave" id="clave" class="form-control" placeholder="Contraseña ..."/>
                     </div>
                     <div class="form-group">
-                        <input type="checkbox" name="remember_me"/> Recordar sesion
+                        <input type="checkbox" name="remember_me"/> Recordar sesion!
                     </div>
                     <div id="smg" ></div>
                 </div>

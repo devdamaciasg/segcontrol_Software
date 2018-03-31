@@ -5,6 +5,8 @@ require_once($_SERVER['DOCUMENT_ROOT']."/segcontrol/controller/empleadoControlle
 
 $sesion=unserialize(urldecode($_GET["array"]));
 
+
+  
 $rol=$sesion->getId_rol();
 $sesion_id=$sesion->getId_usuario();
 
