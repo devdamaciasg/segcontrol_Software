@@ -86,12 +86,12 @@ class usuariosController{
 
     public function Nempleados(){
       $ud=new usuariosDao();
-      return $ud->Nuempleados();
+      return $ud->Nempleados();
     }
 
     public function Nclientes(){
       $ud=new usuariosDao();
-      return $ud->Nuclientes();
+      return $ud->Nclientes();
     }
 
     public function cargarListaCliente ($id){

@@ -17,7 +17,7 @@ $objController=new usuariosController();
       <div class="icon">
         <i class="ion ion-person-add"></i>
       </div>
-      <a href="#" id="empleadosV" class="small-box-footer">
+      <a href="#" id="empleadosVista" class="small-box-footer">
         Acceder <i class="fa fa-arrow-circle-right"></i>
       </a>
     </div>

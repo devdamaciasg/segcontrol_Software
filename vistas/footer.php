@@ -14,6 +14,7 @@
 <script type="text/javascript" src="../assets/js/AdminLTE/app.js"></script>
 <script type="text/javascript" src="../assets/js/plugins/iCheck/icheck.min.js"></script>
 <script type="text/javascript" src="../assets/js/AdminLTE/sesion.js"></script>
+<script type="text/javascript" src="../assets/js/AdminLTE/menuUsuarios.js"></script>
 <script type="text/javascript" src="../assets/js/AdminLTE/menu.js"></script>
 <script type="text/javascript" src="../assets/js/AdminLTE/dashboard.js"></script>
 <script type="text/javascript" src="../assets/js/script.js"></script>
