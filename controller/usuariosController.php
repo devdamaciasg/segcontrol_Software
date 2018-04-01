@@ -79,28 +79,19 @@ class usuariosController{
       return $ud->cambioFoto($id,$foto);
     }
 
-    public function Nuclientes(){
-      $ud=new usuariosDao();
-      return $ud->Nuclientes();
-    }
-
     public function ID_ultimo_Usuario(){
       $ud=new usuariosDao();
       return $ud->ID_ultimo_Usuario();
     }
 
-    public function Nuempleados(){
+    public function Nempleados(){
       $ud=new usuariosDao();
       return $ud->Nuempleados();
     }
 
-
-    public function guardarUsuario(){
-
-    }
-    public function cargarListaEmpleado(){
-
-
+    public function Nclientes(){
+      $ud=new usuariosDao();
+      return $ud->Nuclientes();
     }
 
     public function cargarListaCliente ($id){
@@ -109,15 +100,7 @@ class usuariosController{
       $v=$ud->cargarListaCliente($id);
       echo $v[0]->getNombre();
       return $v;
-
     }
 
-    public function desactivar_Usuario($id){
-
-    }
-
-
-  }
-
-
-  ?>
+}
+?>

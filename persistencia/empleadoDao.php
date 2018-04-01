@@ -60,32 +60,24 @@ class empleadoDao
       }
 
       public function empleadoIdUsuario($id_usuario){
-
         $data_source = new DataSource();
-        $objConductor = null;
-        $arrayConductor = array();
         $data_table = $data_source->ejecutarConsulta("SELECT * FROM `empleado` where id_usuario = :id "
         ,array(':id'=>$id_usuario));
-
-
-        foreach ($data_table as $clave => $valor) {
         $objEmpleado = new empleado(
-            $data_table[$clave]["id_empleado"],
-            $data_table[$clave]["id_usuario"],
-            $data_table[$clave]["nombre"],
-            $data_table[$clave]["tipo_documento"],
-            $data_table[$clave]["numero_documento"],
-            $data_table[$clave]["direccion"],
-            $data_table[$clave]["ciudad"],
-            $data_table[$clave]["fijo"],
-            $data_table[$clave]["celular1"],
-            $data_table[$clave]["celular2"],
-            $data_table[$clave]["celular3"],
-            $data_table[$clave]["email"],
-            $data_table[$clave]["foto"]);
-            array_push($arrayEmpleado, $objEmpleado);
-          }
-          return $arrayEmpleado;
+            $data_table[0]["id_empleado"],
+            $data_table[0]["id_usuario"],
+            $data_table[0]["nombre"],
+            $data_table[0]["tipo_documento"],
+            $data_table[0]["numero_documento"],
+            $data_table[0]["direccion"],
+            $data_table[0]["ciudad"],
+            $data_table[0]["fijo"],
+            $data_table[0]["celular1"],
+            $data_table[0]["celular2"],
+            $data_table[0]["celular3"],
+            $data_table[0]["email"],
+            $data_table[0]["foto"]);
+          return $objEmpleado;
         }
       public function registrarEmpleado(empleado $empleado){
         $data_source = new DataSource();
@@ -98,7 +90,7 @@ class empleadoDao
             ':nombre'=>$empleado->getNombre(),
             ':tipo_documento'=>$empleado->getTipo_documento(),
             ':numero_documento'=>$empleado->getNumero_documento(),
-            ':direccion'=>$empleado->getDireccion()
+            ':direccion'=>$empleado->getDireccion(),
             ':ciudad'=>$empleado->getCiudad(),
             ':fijo'=>$empleado->getFijo(),
             ':nombre_conductor'=>$empleado->getNombre_conductor(),
@@ -135,7 +127,7 @@ class empleadoDao
           ':nombre'=>$empleado->getNombre(),
           ':tipo_documento'=>$empleado->getTipo_documento(),
           ':numero_documento'=>$empleado->getNumero_documento(),
-          ':direccion'=>$empleado->getDireccion()
+          ':direccion'=>$empleado->getDireccion(),
           ':ciudad'=>$empleado->getCiudad(),
           ':fijo'=>$empleado->getFijo(),
           ':celular1'=>$empleado->getCelular1(),

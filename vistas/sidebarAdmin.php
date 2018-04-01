@@ -5,8 +5,8 @@
     <div class="pull-left image">
       <img src=<?php echo $sesion_foto ?> class="img-circle" alt="User Image" />
     </div>
-    <div class="pull-left info">
-      <br>
+    <div class="pull-center info">
+      <p>Bienvenido<br> <?php echo "".$sesion_nombre ?></p>
       <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
     </div>
   </div>
@@ -15,6 +15,11 @@
     <li class="active">
       <a>
         Menu <span><?php echo $sesion_rol ?></span>
+      </a>
+    </li>
+    <li>
+      <a href="" id="Principal">
+        <i class="fa fa-bar-chart-o"></i> <span>Principal</span>
       </a>
     </li>
     <li>

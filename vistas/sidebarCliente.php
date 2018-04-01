@@ -5,8 +5,8 @@
     <div class="pull-left image">
       <img src="img/avatar3.png" class="img-circle" alt="User Image" />
     </div>
-    <div class="pull-left info">
-      <p>Bienvenido , <?php echo "".$sesion_nombre ?></p>
+    <div class="pull-center info">
+      <p>Bienvenido<br>  <?php echo "".$sesion_nombre ?></p>
 
       <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
     </div>
@@ -26,6 +26,11 @@
     <li class="active">
       <a href="index.html">
         <i class="fa fa-dashboard"></i> <span>Cliente</span>
+      </a>
+    </li>
+    <li>
+      <a href="" id="Principal">
+        <i class="fa fa-bar-chart-o"></i> <span>Principal</span>
       </a>
     </li>
     <li>

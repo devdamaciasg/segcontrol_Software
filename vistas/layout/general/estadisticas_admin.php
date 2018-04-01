@@ -1,23 +1,14 @@
 <?php
 require_once($_SERVER['DOCUMENT_ROOT']."/segcontrol/controller/usuariosController.php");
-//var get....
-// $sesion=$_GET["sesion"];
-// $rol=$_GET["rol"];
-// $usuario=$_GET["usuario"];
-// $clave=$_GET["clave"];
-// $estado=$_GET["estado"];
-///
 $objController=new usuariosController();
-
 ?>
 <div class="row">
-
   <div class="col-lg-3 col-xs-6">
     <!-- small box -->
     <div class="small-box bg-green">
       <div class="inner">
         <h3>
-          <?php echo $objController->Nuempleados(); ?>
+          <?php echo $objController->Nempleados(); ?>
         </h3>
         <p>
             Empleados Registrados
@@ -36,9 +27,7 @@ $objController=new usuariosController();
     <div class="small-box bg-yellow">
       <div class="inner">
         <h3>
-        <?php echo $objController->Nuclientes();
-               ?>
-
+        <?php echo $objController->Nclientes();?>
         </h3>
         <p>
           Clientes Registrados

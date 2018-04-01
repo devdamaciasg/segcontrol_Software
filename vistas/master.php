@@ -5,8 +5,6 @@ require_once($_SERVER['DOCUMENT_ROOT']."/segcontrol/controller/empleadoControlle
 
 $sesion=unserialize(urldecode($_GET["array"]));
 
-
-  
 $rol=$sesion->getId_rol();
 $sesion_id=$sesion->getId_usuario();
 
@@ -15,16 +13,22 @@ if(intval($rol)==1){
   $ConEmp = new EmpleadoController();
   $obj = $ConEmp->empleadoIdUsuario($sesion_id);
 
+  $sesion_foto=$obj->getFoto();
+  $sesion_nombre=$obj->getNombre();
 }else{
   if(intval($rol)==2){
     $sesion_rol="asistente";
     $ConEmp = new EmpleadoController();
     $obj = $ConEmp->empleadoIdUsuario($sesion_id);
+    $sesion_foto=$obj->getFoto();
+    $sesion_nombre=$obj->getNombre();
 
   }else{
     $sesion_rol="cliente";
     $ConCli = new clienteController();
     $obj = $ConCli->clienteIdUsuario($sesion_id);
+    $sesion_foto="";
+    $sesion_nombre=$obj->getNombre();
   }
 }
 
@@ -62,9 +66,6 @@ if(intval($rol)==1){
           <small>Ver 1.0 Alpha </small>
         </h1>
         <div id="smg_panel"></div>
-
-
-
       </section>
         <!-- Main content -->
       <section class="content">
