@@ -8,7 +8,7 @@ e.preventDefault();
    //llamada al fichero PHP con AJAX
    $.ajax({
      data:   params,
-     url:   '../vistas/layout/empleado/empleadoMain.php',
+     url:   '../vistas/layout/general/empleado/empleadoMain.php',
      type:  'post',
      beforeSend: function () {
        //mostramos gif "cargando"
