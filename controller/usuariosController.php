@@ -5,6 +5,11 @@ require_once($_SERVER['DOCUMENT_ROOT']."/segcontrol/model/cliente.php");
 
 class usuariosController{
 
+  public function usuarioId($id){
+    $ud=new usuariosDao();
+    return  $ud-> usuarioId($id);
+  }
+
   public function PerfilEmpleado($id){
     $ud=new usuariosDao();
     $obj = $ud->CargarPerfil($id,"asistente");

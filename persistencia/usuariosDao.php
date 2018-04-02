@@ -7,25 +7,39 @@ require_once ($_SERVER['DOCUMENT_ROOT']."/segcontrol/model/clienteUsuario.php");
 
 class usuariosDao
 {
+	public function usuarioId($id){
+		$data_source = new DataSource();
+		$data_sesion_empleado = $data_source->ejecutarConsulta(" SELECT * FROM usuario where id_usuario = :u  ",array(':u'=>$u));
+		if(count($data_sesion_empleado) >= 1){
+
+					$objUsu  = new usuario(
+					$data_sesion_empleado[0]["id"],
+					$data_sesion_empleado[0]["rol"],
+					$data_sesion_empleado[0]["nombre"],
+					$data_sesion_empleado[0]["clave"],
+					$data_sesion_empleado[0]["estado"]);
+			return $objUsu;
+		}else{
+			return null;
+		}
+
+	}//end method
+
+
 	public function validadSesion($u,$c){
 		echo $u." ".$c;
 
 		$data_source = new DataSource();
-
-		// $data_sesion_cliente = $data_source->ejecutarConsulta(" SELECT usuario.id_usuario as 'id' ,rol.nombre_rol as 'rol' ,
-		// usuario.estado as 'estado',cliente.id_cliente as 'tipo', cliente.nombre_contacto as 'nombre'
-		// FROM cliente JOIN usuario  on (cliente.id_usuario=usuario.id_usuario)JOIN rol ON(usuario.id_rol=rol.id_rol)
-		// where (usuario.usuario = :u and usuario.clave = :c) AND usuario.estado='ACTIVO' ",array(':u'=>$u,':c'=>$c));
-		$data_sesion_cliente = $data_source->ejecutarConsulta(" SELECT 'usuario.id_usuario' as 'id' , 'usuario.rol' as 'rol' ,
+		$data_sesion_cliente = $data_source->ejecutarConsulta(" SELECT `usuario`.`id_usuario` as 'id' , `usuario`.`rol` as 'rol' ,
  		'usuario.estado' as 'estado', 'usuario.clave' as 'clave',  'usuario.usuario' as 'nombre'
- 		FROM cliente JOIN usuario  on ('cliente.id_usuario'='usuario.id_usuario')JOIN rol ON('usuario.id_rol'='rol.id_rol')
- 		where ('usuario.usuario' = :u and 'usuario.clave' = :c) AND 'usuario.estado'='ACTIVO' ",array(':u'=>$u,':c'=>$c));
+ 		FROM `cliente` JOIN `usuario`  on (`cliente`.`id_usuario`=`usuario`.`id_usuario`)JOIN `rol` ON(`usuario`.`id_rol`=`rol`.`id_rol`)
+ 		where (`usuario`.`usuario` = :u and `usuario`.`clave` = :c) AND `usuario`.`estado`='ACTIVO' ",array(':u'=>$u,':c'=>$c));
 
 
-		$data_sesion_empleado = $data_source->ejecutarConsulta(" SELECT usuario.id_usuario as 'id' , usuario.id_rol as 'rol' ,
- 		usuario.estado as 'estado', usuario.clave as 'clave',  usuario.usuario as 'nombre'
-		FROM empleado JOIN usuario  on (empleado.id_usuario=usuario.id_usuario)JOIN rol ON(usuario.id_rol=rol.id_rol)
-		where (usuario.usuario = :u and usuario.clave = :c) AND usuario.estado='ACTIVO' ",array(':u'=>$u,':c'=>$c) );
+		$data_sesion_empleado = $data_source->ejecutarConsulta(" SELECT `usuario`.`id_usuario` as 'id' ,`usuario`.`id_rol` as 'rol'
+			, `usuario`.`estado` as 'estado', `usuario`.`clave` as 'clave', `usuario`.`usuario` as 'nombre'
+			FROM `empleado` JOIN `usuario` on ( `empleado`.`id_usuario` = `usuario`.`id_usuario` )JOIN  `rol`  ON( `usuario`.`id_rol`=`rol`.`id_rol` )
+			where (`usuario`.`usuario` = :u and `usuario`.`clave` = :c) AND `usuario`.`estado`='ACTIVO' ",array(':u'=>$u,':c'=>$c) );
 
 
 

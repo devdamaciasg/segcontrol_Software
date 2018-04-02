@@ -17,6 +17,7 @@ class empleadoDao
     $objEmpleado = null;
     $arrayEmpleado = array();
 
+    if(count($data_table)>0){
     foreach ($data_table as $clave => $valor) {
     $objEmpleado = new empleado(
         $data_table[$clave]["id_empleado"],
@@ -34,8 +35,9 @@ class empleadoDao
         $data_table[$clave]["foto"]);
         array_push($arrayEmpleado, $objEmpleado);
       }
-      return $arrayConductor;
-    }
+      return $arrayEmpleado;
+    }else{ echo "nada" ; return null;}
+}
 
     public function empleadoId($id_empleado){
 
@@ -139,5 +141,7 @@ class empleadoDao
       );
       return $resultado;
     }
+
+
   }
   ?>
