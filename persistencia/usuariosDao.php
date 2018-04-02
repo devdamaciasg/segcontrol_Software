@@ -9,13 +9,13 @@ class usuariosDao
 {
 	public function usuarioId($id){
 		$data_source = new DataSource();
-		$data_sesion_empleado = $data_source->ejecutarConsulta(" SELECT * FROM usuario where id_usuario = :u  ",array(':u'=>$u));
-		if(count($data_sesion_empleado) >= 1){
+		$data_sesion_empleado = $data_source->ejecutarConsulta(" SELECT * FROM usuario where id_usuario = :u  ",array(':u'=>$id));
+		if(count($data_sesion_empleado) >= 0){
 
 					$objUsu  = new usuario(
-					$data_sesion_empleado[0]["id"],
-					$data_sesion_empleado[0]["rol"],
-					$data_sesion_empleado[0]["nombre"],
+					$data_sesion_empleado[0]["id_usuario"],
+					$data_sesion_empleado[0]["id_rol"],
+					$data_sesion_empleado[0]["usuario"],
 					$data_sesion_empleado[0]["clave"],
 					$data_sesion_empleado[0]["estado"]);
 			return $objUsu;

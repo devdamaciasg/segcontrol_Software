@@ -23,10 +23,9 @@ $objUsuario= new usuariosController();
       <?php
        $arrayObj = array();
        $arrayObj = $objEmpleado->listaEmpleados();
-       if(is_null( $arrayObj ){
+       if(is_null( $arrayObj) ){
           echo "<span>No hay Empleados Registrados en la base de datos.</span>";
        }else{
-           $arrayObj->listaEmpleados();
            echo "<table class='table table-bordered'>
              <tbody>
              <tr>
@@ -38,10 +37,10 @@ $objUsuario= new usuariosController();
                <th>Accion</th>
             </tr> ";
             foreach ($arrayObj as $clave => $valor) {
-             $obj->usuarioId($arrayObj[$clave]->getId_usuario());
-             $estado = $obj->getEstado();
-             $id_rol = $obj->getId_rol();
-             $usuario = $obj->getUsuario();
+             $objUsuario->usuarioId( $arrayObj[$clave]->getId_usuario() );
+             $estado = $objUsuario->getEstado();
+             $id_rol = $objUsuario->getId_rol();
+             $usuario = $objUsuario->getUsuario();
              if(intval($id_rol) == 1){$rol="Administrador";}else{if(intval($id_rol) == 2){$rol="Asistente";}else{$rol="Cliente";}}
             echo"<tr>
                     <td>".$arrayObj[$clave]->getId_empleado()."</td>
@@ -50,7 +49,7 @@ $objUsuario= new usuariosController();
                     <td>".$usuario."</td>
                     <td>".$arrayObj[$clave]->getNombre()."</td>
                     <td>
-                      <button class='btn btn-primary' id='id_usuario' value=".$arrayObj[$clave]->getUsuario().">Ver</button>
+                      <button class='btn btn-primary' id='id_usuario' value=".$arrayObj[$clave]->getId_usuario().">Ver</button>
                     </td>
                   </tr>";
             }

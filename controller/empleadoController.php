@@ -23,7 +23,6 @@ class empleadoController{
 
   public function listaEmpleados(){
      $ObjEmpleado = new empleadoDao();
-     echo "fsdf";
      return $ObjEmpleado->listaEmpleados();
   }
 

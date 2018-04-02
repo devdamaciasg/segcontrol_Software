@@ -36,7 +36,7 @@ class empleadoDao
         array_push($arrayEmpleado, $objEmpleado);
       }
       return $arrayEmpleado;
-    }else{ echo "nada" ; return null;}
+    }else{  ; return null;}
 }
 
     public function empleadoId($id_empleado){
