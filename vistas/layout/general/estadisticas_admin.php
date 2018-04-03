@@ -8,10 +8,10 @@ $objController=new usuariosController();
     <div class="small-box bg-green">
       <div class="inner">
         <h3>
-          <?php echo $objController->Nempleados(); ?>
+          # <?php echo $objController->Nempleados(); ?>
         </h3>
         <p>
-            Empleados Registrados
+            Empleados
         </p>
       </div>
       <div class="icon">
@@ -27,16 +27,16 @@ $objController=new usuariosController();
     <div class="small-box bg-yellow">
       <div class="inner">
         <h3>
-        <?php echo $objController->Nclientes();?>
+        # <?php echo $objController->Nclientes();?>
         </h3>
         <p>
-          Clientes Registrados
+           Clientes
         </p>
       </div>
       <div class="icon">
         <i class="ion ion-person-stalker"></i>
       </div>
-      <a href="#" id="clientesV" class="small-box-footer">
+      <a href="#" id="clientesVista" class="small-box-footer">
         Acceder <i class="fa fa-arrow-circle-right"></i>
       </a>
     </div>

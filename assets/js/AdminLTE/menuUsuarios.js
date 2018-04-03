@@ -23,24 +23,16 @@ e.preventDefault();
      }});
 
 });
-$(document).on('click','#clientesV',function(e){
+$(document).on('click','#clientesVista',function(e){
 e.stopPropagation();
 e.preventDefault();
    var sesion=document.getElementById("sesionHidden").value;
-   var usuario=document.getElementById("usuarioHidden").value;
-   var clave=document.getElementById("claveHidden").value;
-   var estado=document.getElementById("estadoHidden").value;
-   var rol=document.getElementById("rolHidden").value;
    console.log(sesion);
-   var params = { "sesion"  : sesion,
-                  "usuario" : usuario,
-                  "clave"   : clave,
-                  "estado"  : estado,
-                  "rol"     : rol  };
+   var params = { "sesion"  : sesion };
    //llamada al fichero PHP con AJAX
    $.ajax({
      data:   params,
-     url:   '../vistas/layout/administrador/clientes.php',
+     url:   '../vistas/layout/cliente/clienteMain.php',
      type:  'post',
      beforeSend: function () {
        //mostramos gif "cargando"

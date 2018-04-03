@@ -19,7 +19,7 @@ class clienteDao
 
     foreach ($data_table as $clave => $valor) {
     $objEmpleado = new empleado(
-        $data_table[$clave]["id_empleado"],
+        $data_table[$clave]["id_cliente"],
         $data_table[$clave]["id_usuario"],
         $data_table[$clave]["razon_social"],
         $data_table[$clave]["nombre_contacto"],
@@ -32,7 +32,7 @@ class clienteDao
         $data_table[$clave]["celular2"],
         $data_table[$clave]["email1"],
         $data_table[$clave]["email2"],
-        $data_table[$clave]["email3"]();
+        $data_table[$clave]["email3"]);
         array_push(  $arrayClientes, $objClientes);
       }
       return   $arrayClientes;
@@ -44,10 +44,10 @@ class clienteDao
       $data_table = $data_source->ejecutarConsulta("SELECT * FROM `cliente` where id_cliente = :id "
       ,array(':id'=>$id_cliente));
       $objClientes = null;
-      $arrayClientes = array();
 
+   if( count($data_table)>0){
       foreach ($data_table as $clave => $valor) {
-      $objEmpleado = new empleado(
+          $objClientes = new empleado(
           $data_table[$clave]["id_empleado"],
           $data_table[$clave]["id_usuario"],
           $data_table[$clave]["razon_social"],
@@ -61,10 +61,12 @@ class clienteDao
           $data_table[$clave]["celular2"],
           $data_table[$clave]["email1"],
           $data_table[$clave]["email2"],
-          $data_table[$clave]["email3"]();
-          array_push(  $arrayClientes, $objClientes);
+          $data_table[$clave]["email3"]);
         }
-        return $arrayClientes;
+        return $objClientes;}
+        else{
+          return false;
+        }
       }
 
       public function clienteIdUsuario($id_cliente){

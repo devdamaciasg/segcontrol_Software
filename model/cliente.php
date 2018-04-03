@@ -1,7 +1,7 @@
 <?php
 class cliente{
 
-private $id_empleado;
+private $id_cliente;
 private $id_usuario;
 private $nombre;
 private $razon_social;
@@ -17,10 +17,10 @@ private $email2;
 private $email3;
 
 
-public function __construct($id_empleado,$id_usuario,$razon_social,$nombre,$tipo_documento,$numero_documento,$direccion,
+public function __construct($id_cliente,$id_usuario,$razon_social,$nombre,$tipo_documento,$numero_documento,$direccion,
 $ciudad,$fijo,$celular1,$celular2,$email,$email2,$email3){
 
-	$this->id_empleado=$id_empleado;
+	$this->id_cliente=$id_cliente;
 	$this->id_usuario=$id_usuario;
 	$this->nombre=$nombre;
   $this->razon_social=$razon_social;
@@ -36,8 +36,8 @@ $ciudad,$fijo,$celular1,$celular2,$email,$email2,$email3){
   $this->email3=$email2;
   }
 
-public function setId_empleado($id_empleado){$this->id_empleado = $id_empleado;}
-public function getId_empleado(){return $this->id_empleado;}
+public function setId_cliente($id_cliente){$this->id_cliente = $id_cliente;}
+public function getId_cliente(){return $this->id_cliente;}
 
 public function setId_usuario($id_usuario){$this->id_usuario = $id_usuario;}
 public function getId_usuario(){return $this->id_usuario;}

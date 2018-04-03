@@ -1,6 +1,7 @@
 <?php
 require_once($_SERVER['DOCUMENT_ROOT']."/segcontrol/persistencia/usuariosDao.php");
 require_once($_SERVER['DOCUMENT_ROOT']."/segcontrol/persistencia/serviciosDao.php");
+require_once($_SERVER['DOCUMENT_ROOT']."/segcontrol/persistencia/clienteDao.php");
 require_once($_SERVER['DOCUMENT_ROOT']."/segcontrol/model/empleado.php");
 require_once($_SERVER['DOCUMENT_ROOT']."/segcontrol/model/cliente.php");
 require_once($_SERVER['DOCUMENT_ROOT']."/segcontrol/model/servicios.php");
@@ -21,7 +22,7 @@ class clienteController{
 
     public function listaClientes(){
       $ObjCliente=new clienteDao();
-      return   $ObjCliente->listaEmpleados();
+      return   $ObjCliente->listaCliente();
     }
 
     public function clienteId($id_cliente){
