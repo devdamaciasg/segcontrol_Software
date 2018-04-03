@@ -5,14 +5,14 @@
     <div class="small-box bg-green">
       <div class="inner">
         <h3>
-          44
+          #44
         </h3>
         <p>
-            Conductores Registrados
+            Conductores
         </p>
       </div>
       <div class="icon">
-        <i class="ion ion-person-add"></i>
+        <i class="fa fa-tachometer"></i>
       </div>
       <a href="#" id="conductor_main" class="small-box-footer">
         Acceder <i class="fa fa-arrow-circle-right"></i>
@@ -24,16 +24,16 @@
     <div class="small-box bg-yellow">
       <div class="inner">
         <h3>
-          44
+          #44
         </h3>
         <p>
-          Clientes Registrados
+          Clientes
         </p>
       </div>
       <div class="icon">
-        <i class="ion ion-person-stalker"></i>
+        <i class="fa  fa-globe"></i>
       </div>
-      <a href="#" class="small-box-footer">
+      <a href="#" id="clientesVista" class="small-box-footer">
         Acceder <i class="fa fa-arrow-circle-right"></i>
       </a>
     </div>
@@ -44,14 +44,14 @@
     <div class="small-box bg-blue">
       <div class="inner">
         <h3>
-          4
+          #4
         </h3>
         <p>
           Vehiculos
         </p>
       </div>
       <div class="icon">
-        <i class="ion ion-card"></i>
+        <i class="fa fa-truck"></i>
       </div>
       <a href="#" id="perfil" class="small-box-footer">
         Acceder <i class="fa fa-arrow-circle-right"></i>

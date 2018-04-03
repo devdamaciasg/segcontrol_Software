@@ -18,11 +18,13 @@ $arrayConductor=$objConductor->listaConductor();
             </div>
           </div>
         </div>
+        <div class="col-md-12">
+          <button class='btn btn-danger' id='actualizar_tabla_empleado' value=""><i class="fa fa-refresh"></i></button>
+          <button class='btn btn-warning' id='actualizar_tabla_empleado' value=""><i class="fa  fa-file-text"></i> Crear nuevo conductor</button>
+
+        </div>
       </div><!-- /.box-header -->
       <div id ="mensaje"></div>
-      <div class="box-tools">
-        <input type="button" id="agregar_conductor_main" class="btn btn-success" value="Agregar conductor Nuevo"/>
-      </div>
       <div class="box-body">
         <div id="conductor_contenedor_dinamico">
           <?php  if(is_null($arrayConductor)){

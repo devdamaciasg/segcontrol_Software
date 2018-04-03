@@ -42,6 +42,11 @@
         <i class="fa fa-code-fork"></i> <span>Servicios</span>
       </a>
     </li>
+    <li>
+      <a href="" id="menuConfiguracion">
+        <i class="fa fa-gears"></i> <span>Configuracion</span>
+      </a>
+    </li>
   </ul>
 </section>
 <!-- /.sidebar -->

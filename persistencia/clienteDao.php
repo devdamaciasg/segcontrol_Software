@@ -18,7 +18,7 @@ class clienteDao
     $arrayClientes = array();
 
     foreach ($data_table as $clave => $valor) {
-    $objEmpleado = new empleado(
+    $objClientes = new cliente(
         $data_table[$clave]["id_cliente"],
         $data_table[$clave]["id_usuario"],
         $data_table[$clave]["razon_social"],

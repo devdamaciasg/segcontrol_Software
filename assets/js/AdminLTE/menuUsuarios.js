@@ -43,7 +43,5 @@ e.preventDefault();
      success:  function (response) {
        $("#contenido").html(response);
        $("#smg_panel").html("");
-
      }});
-
 });

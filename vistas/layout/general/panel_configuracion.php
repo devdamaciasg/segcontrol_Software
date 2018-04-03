@@ -8,13 +8,13 @@
           &nbsp;
         </h3>
         <p>
-          GESTION DE SERVICIOS
+          Parametros del Sistema General
         </p>
       </div>
       <div class="icon">
         <i class="ion ion-calculator"></i>
       </div>
-      <a href="#" id="servicios_main" class="small-box-footer">
+      <a href="#" id="parametros_main" class="small-box-footer">
         Acceder <i class="fa fa-arrow-circle-right"></i>
       </a>
     </div>
@@ -27,36 +27,17 @@
           &nbsp;
         </h3>
         <p>
-            GESTION DE MINUTAS
+            Copias de Seguridad y respaldo
         </p>
       </div>
       <div class="icon">
         <i class="ion ion-clipboard"></i>
       </div>
-      <a href="#" id="bitacoras_main" class="small-box-footer">
+      <a href="#" id="bd_main" class="small-box-footer">
         Acceder <i class="fa fa-arrow-circle-right"></i>
       </a>
     </div>
   </div><!-- ./col -->
-  <div class="col-lg-3 col-xs-6">
-    <!-- small box -->
-    <div class="small-box bg-yellow">
-      <div class="inner">
-        <h3>
-          &nbsp;
-        </h3>
-        <p>
-            Aseguradores
-        </p>
-      </div>
-      <div class="icon">
-        <i class="ion ion-pricetags"></i>
-      </div>
-      <a href="#" id="aseguradores_main" class="small-box-footer">
-        Acceder <i class="fa fa-arrow-circle-right"></i>
-      </a>
-    </div>
-  </div>
 
 
 
