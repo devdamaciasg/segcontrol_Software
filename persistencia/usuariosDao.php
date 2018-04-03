@@ -8,6 +8,7 @@ require_once ($_SERVER['DOCUMENT_ROOT']."/segcontrol/model/clienteUsuario.php");
 class usuariosDao
 {
 	public function usuarioId($id){
+
 		$data_source = new DataSource();
 		$data_sesion_empleado = $data_source->ejecutarConsulta(" SELECT * FROM usuario where id_usuario = :u  ",array(':u'=>$id));
 		if(count($data_sesion_empleado) >= 0){
@@ -18,7 +19,7 @@ class usuariosDao
 					$data_sesion_empleado[0]["usuario"],
 					$data_sesion_empleado[0]["clave"],
 					$data_sesion_empleado[0]["estado"]);
-			return $objUsu;
+			return 	$objUsu;
 		}else{
 			return null;
 		}

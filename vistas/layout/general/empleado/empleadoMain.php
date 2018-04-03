@@ -37,13 +37,14 @@ $objUsuario= new usuariosController();
                <th>Accion</th>
             </tr> ";
             foreach ($arrayObj as $clave => $valor) {
-             $objUsuario->usuarioId( $arrayObj[$clave]->getId_usuario() );
-             $estado = $objUsuario->getEstado();
-             $id_rol = $objUsuario->getId_rol();
-             $usuario = $objUsuario->getUsuario();
+
+             $obj=$objUsuario->usuarioId( $arrayObj[$clave]->getId_usuario() );
+             $estado = $obj->getEstado();
+             $id_rol = $obj->getId_rol();
+             $usuario = $obj->getUsuario();
              if(intval($id_rol) == 1){$rol="Administrador";}else{if(intval($id_rol) == 2){$rol="Asistente";}else{$rol="Cliente";}}
             echo"<tr>
-                    <td>".$arrayObj[$clave]->getId_empleado()."</td>
+                    <td>".$arrayObj[$clave]->getId_empleado()."-".$arrayObj[$clave]->getId_usuario()."</td>
                     <td>".$estado."</td>
                     <td>".$rol."</td>
                     <td>".$usuario."</td>
