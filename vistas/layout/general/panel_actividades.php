@@ -8,10 +8,10 @@ require_once($_SERVER['DOCUMENT_ROOT']."/segcontrol/controller/empleadoControlle
   <div class="col-md-12">
     <div class="box">
       <div class="box-header">
-        <h3 class="box-title">Gestion de Aseguradoras</h3>
+        <h3 class="box-title">Gestion de Actividades compartidas</h3>
         <div class="box-tools">
           <div class="input-group">
-            <input type="text" name="table_search_empleado" id="table_search_empleado" class="form-control input-sm pull-right" style="width: 150px;" placeholder="Buscar . . .">
+            <input type="text" name="table_search_actividades" id="table_search_actividades" class="form-control input-sm pull-right" style="width: 150px;" placeholder="Buscar . . .">
             <div class="input-group-btn">
               <button class="btn btn-sm btn-default"><i class="fa fa-search"></i></button>
             </div>
@@ -19,8 +19,6 @@ require_once($_SERVER['DOCUMENT_ROOT']."/segcontrol/controller/empleadoControlle
         </div>
         <div class="col-md-12">
           <button class='btn btn-danger' id='actualizar_tabla_empleado' value=""><i class="fa fa-refresh"></i></button>
-          <button class='btn btn-warning' id='actualizar_tabla_empleado' value=""><i class="fa  fa-file-text"></i> Crear registro de asguradora</button>
-
         </div>
       </div>
 
