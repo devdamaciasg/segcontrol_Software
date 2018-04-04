@@ -5,7 +5,7 @@
     <div class="small-box bg-green">
       <div class="inner">
         <h3>
-          #44
+          &nbsp;
         </h3>
         <p>
             Conductores
@@ -24,7 +24,7 @@
     <div class="small-box bg-yellow">
       <div class="inner">
         <h3>
-          #44
+          &nbsp;
         </h3>
         <p>
           Clientes
@@ -44,7 +44,7 @@
     <div class="small-box bg-blue">
       <div class="inner">
         <h3>
-          #4
+          &nbsp;
         </h3>
         <p>
           Vehiculos

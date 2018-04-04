@@ -8,7 +8,7 @@ $objController=new usuariosController();
     <div class="small-box bg-green">
       <div class="inner">
         <h3>
-          # <?php echo $objController->Nempleados(); ?>
+          &nbsp;
         </h3>
         <p>
             Empleados
@@ -27,7 +27,7 @@ $objController=new usuariosController();
     <div class="small-box bg-yellow">
       <div class="inner">
         <h3>
-        # <?php echo $objController->Nclientes();?>
+          &nbsp;
         </h3>
         <p>
            Clientes
