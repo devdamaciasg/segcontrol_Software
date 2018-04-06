@@ -2,6 +2,7 @@
 require_once($_SERVER['DOCUMENT_ROOT']."/segcontrol/controller/clienteController.php");
 require_once($_SERVER['DOCUMENT_ROOT']."/segcontrol/controller/vehiculoController.php");
 require_once($_SERVER['DOCUMENT_ROOT']."/segcontrol/controller/conductorController.php");
+require_once($_SERVER['DOCUMENT_ROOT']."/segcontrol/vistas/recursosPHP/Colombia.php");
 
 ?>
 <div class="row">
@@ -48,7 +49,7 @@ require_once($_SERVER['DOCUMENT_ROOT']."/segcontrol/controller/conductorControll
               <?php
                $objVehiculo= new vehiculoController();
                $arrayObj1 = array();
-               $arrayObj1 = $objVehiculo->listaVehiculos()();
+               $arrayObj1 = $objVehiculo->listaVehiculos();
                if(is_null( $arrayObj1) ){
                  echo "<span>No hay vehiculos Registrados .</span>";
                  echo "<button type='button' id='vehiculos_main' class='btn btn-success'>Vehiculos </button>";
@@ -56,7 +57,7 @@ require_once($_SERVER['DOCUMENT_ROOT']."/segcontrol/controller/conductorControll
                 echo "<select class='form-control'>";
                       foreach ($arrayObj1 as $clave => $valor) {
                          $ob = $objCliente->clienteId($arrayObj[$clave]->getId_cliente() );
-                         echo "<option value='".$arrayObj1[$clave]->getId_vehiculo()."'> ".$arrayObj1[$clave]->getPlaca()." - ".$ob->getRazon_social()." - ".$ob->getNombre()."</option>";
+                         echo "<option value='".$arrayObj1[$clave]->getId_vehiculo()."'>vehiculo placa : ".$arrayObj1[$clave]->getPlaca()."   (".$ob->getRazon_social()." - ".$ob->getNombre().")</option>";
                       }
                     echo "</select>";
                }
@@ -68,9 +69,22 @@ require_once($_SERVER['DOCUMENT_ROOT']."/segcontrol/controller/conductorControll
             <hr>
             <div class="form-group ">
               <label>Listado de Conductores Registrados </label>
-              <select class="form-control">
-                <option>option 1</option>
-              </select>
+              <?php
+               $objConductor= new conductorController();
+               $arrayObj2 = array();
+               $arrayObj2 = $objConductor->listaConductor();
+               if(is_null( $arrayObj2) ){
+                 echo "<span>No hay conductores Registrados .</span>";
+                 echo "<button type='button' id='conductores_main' class='btn btn-success'>Conductores </button>";
+               }else{
+                echo "<select class='form-control'>";
+                      foreach ($arrayObj2 as $clave => $valor) {
+                         echo "<option value='".$arrayObj2[$clave]->getId_conductor()."'>".$arrayObj2[$clave]->getNombre_conductor()."</option>";
+                      }
+                    echo "</select>";
+               }
+
+              ?>
               <p class="help-block">utilize esta opcion si desea cargar un nuevo conductor</p>
               <button type="button" id="cargar_Conductor_Servicio" class="btn btn-success">Cargar Conductor</button>
             </div>
@@ -94,26 +108,37 @@ require_once($_SERVER['DOCUMENT_ROOT']."/segcontrol/controller/conductorControll
               <input type="text" class="form-control" placeholder="Manifiesto ...">
             </div>
             <br>
-            <div class="form-group col-xs-6">
-              <label>Ciudad de Origen</label>
-              <select class="form-control ">
-                <option>option 1</option>
-              </select>
-            </div>
-            <div class="form-group col-xs-6">
-              <label>Ciudad de Destino</label>
-              <select class="form-control ">
-                <option>option 1</option>
-                <option></option>
-              </select>
-            </div>
+    <input type="hidden" name="muni" id="muni"  value="">
+<?php
+          $objColombia= new colombia();
+          $objColombia->departamentos("Departamentos","cargar()","departamento1" );
+          echo "<div id'origen' >
+
+          <div class='form-group col-xs-3'>
+                 <label>Departamentos</label>
+                 <select class='form-control' id='municipio' name='municipio'>
+                    <option value='sin Seleccion'>Seleccione </option>
+                 </select>
+           </div> </div>";
+          $objColombia->departamentos("Departamentos","cargar2()","departamento2" );
+          echo "<div id'destino' >
+
+          <div class='form-group col-xs-3'>
+                 <label>Municipios</label>
+                 <select class='form-control' id='municipio' name='municipio'>
+                    <option value='sin Seleccion'>Seleccione </option>
+                 </select>
+           </div> </div>";
+
+?>
+
             <div class="form-group">
               <label>Direccion de descargue</label>
-              <input type="text" class="form-control" placeholder="Manifiesto ...">
+              <input type="text" class="form-control" placeholder="Direccion de Descargue ...">
             </div>
             <div class="form-group">
               <label>Ruta</label>
-              <textarea class="form-control" rows="3" placeholder="Enter ..."></textarea>
+              <textarea class="form-control" rows="3" placeholder="Ruta ..."></textarea>
             </div>
             <hr>
 
@@ -133,28 +158,28 @@ require_once($_SERVER['DOCUMENT_ROOT']."/segcontrol/controller/conductorControll
           <div class="box-body">
             <div class="form-group col-xs-5">
               <label>Satelital</label>
-              <input type="text" class="form-control" placeholder="Manifiesto ...">
+              <input type="text" class="form-control" placeholder="Satelital ...">
             </div>
             <div class="form-group col-xs-2">
               <label>Sello</label>
-              <input type="text" class="form-control" placeholder="Manifiesto ...">
+              <input type="text" class="form-control" placeholder="Sello ...">
             </div>
             <div class="form-group col-xs-5">
               <label>N Contenedor</label>
-              <input type="text" class="form-control" placeholder="Manifiesto ...">
+              <input type="text" class="form-control" placeholder="Contenedor ...">
             </div>
             <div class="form-group">
               <label>Link Localizador</label>
-              <input type="text" class="form-control" placeholder="Manifiesto ...">
+              <input type="text" class="form-control" placeholder="Localizador ...">
             </div>
             <br>
             <div class="form-group col-xs-6">
               <label>Usuario</label>
-              <input type="text" class="form-control" placeholder="Manifiesto ...">
+              <input type="text" class="form-control" placeholder="Usuario ...">
             </div>
             <div class="form-group col-xs-6">
               <label>Clave</label>
-              <input type="text" class="form-control" placeholder="Manifiesto ...">
+              <input type="text" class="form-control" placeholder="Clave ...">
             </div>
               <div class="form-group ">
             <button type="button" class="btn btn-primary " data-toggle="modal" data-target="#myModal">Cargar imagen frontal</button>
@@ -214,36 +239,4 @@ require_once($_SERVER['DOCUMENT_ROOT']."/segcontrol/controller/conductorControll
      </div>
    </div>
  </div>
-<script>
-
-$("#file").change(function() {
-$("#message").empty();         // To remove the previous error message
-var file = this.files[0];
-var imagefile = file.type;
-
-var match= ["image/jpeg","image/png","image/jpg"];
-if(!((imagefile==match[0]) || (imagefile==match[1]) || (imagefile==match[2])))
-{
-$('#previewing').attr('src','noimage.png');
-$("#message").html("<p id='error'>Please Select A valid Image File</p>"+"<h4>Note</h4>"+"<span id='error_message'>Only jpeg, jpg and png Images type allowed</span>");
-return false;
-}
-    else
-{
-        var reader = new FileReader();
-        reader.onload = imageIsLoaded;
-        reader.readAsDataURL(this.files[0]);
-    }
-
-});
-
-function imageIsLoaded(e) {
-  console.log('y');
-  $("#file").css("color","green");
-      $('#image_preview').css("display", "block");
-      $('#previewing').attr('src', e.target.result);
-  $('#previewing').attr('width', '250px');
-  $('#previewing').attr('height', '230px');
-}
-
-</script>
+<?php require_once($_SERVER['DOCUMENT_ROOT']."/assets/js/AdminLTE/recursosJS/colombia.js"); ?>

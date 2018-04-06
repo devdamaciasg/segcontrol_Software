@@ -15,6 +15,7 @@ class vehiculoDao
     $arrayVehiculo = array();
    if(count($data_table)>0){
     foreach ($data_table as $clave => $valor) {
+    
         $objVehiculo = new vehiculo(
         $data_table[$clave]["id_vehiculo"],
         $data_table[$clave]["id_cliente"],
@@ -22,7 +23,7 @@ class vehiculoDao
         $data_table[$clave]["marca"],
         $data_table[$clave]["color"],
         $data_table[$clave]["n_trailer"]);
-        array_push($arrayVehiculo, $objConductor);
+        array_push($arrayVehiculo, $objVehiculo);
       }
       return $arrayVehiculo;
     }else{return null;}

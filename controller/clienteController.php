@@ -32,7 +32,7 @@ class clienteController{
 
     public function clienteId($id_cliente){
       $ObjCliente=new clienteDao();
-      return $ObjCliente->listaClienteId($id_cliente);
+      return $ObjCliente->clienteId($id_cliente);
     }
 
     public function clienteIdUsuario($id_usuario){

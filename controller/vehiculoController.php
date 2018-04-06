@@ -22,8 +22,8 @@ class vehiculoController{
   }
 
   public function listaVehiculos(){
-    $Objminuta=new vehiculoDao();
-    return $Objminuta->listaVehiculo();
+    $ObjVehiculo=new vehiculoDao();
+    return   $ObjVehiculo->listaVehiculo();
   }
 
   public function vehiculoId($id_vehiculo){
