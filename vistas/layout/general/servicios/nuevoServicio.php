@@ -1,5 +1,8 @@
 <?php
-//require_once($_SERVER['DOCUMENT_ROOT']."/ruta");
+require_once($_SERVER['DOCUMENT_ROOT']."/segcontrol/controller/clienteController.php");
+require_once($_SERVER['DOCUMENT_ROOT']."/segcontrol/controller/vehiculoController.php");
+require_once($_SERVER['DOCUMENT_ROOT']."/segcontrol/controller/conductorController.php");
+
 ?>
 <div class="row">
   <div class="col-md-12">
@@ -12,25 +15,53 @@
         <form role="form">
           <div class="box-body">
             <div  class="input-group-btn">
-              <h3 class="box-title">Panel de : </h3>
-              <button type="submit" class="btn btn-success">Vehiculos </button>
-              <button type="submit" class="btn btn-success">Conductores </button>
-              <button type="submit" class="btn btn-success">Clientes </button>
+              <h3 >Accede a cualquier panel en caso de querer agregrar algun elemento nuevo.</h3>
+              <button type="button" id="vehiculos_main" class="btn btn-success">Vehiculos </button>&nbsp&nbsp
+              <button type="button" id="clientesVista"  class="btn btn-success">Clientes </button>&nbsp&nbsp
+              <button type="button" id="conductor_main" class="btn btn-success">Conductores </button>&nbsp&nbsp
 
             </div>
             <br>
             <div class="input-group-btn">
               <label>Listado de Clientes Registrados</label>
-              <select class="form-control">
-                <option>option 1</option>
-              </select>
+
+              <?php
+               $objCliente= new clienteController();
+               $arrayObj = array();
+               $arrayObj = $objCliente->listaClientesActivos();
+               if(is_null( $arrayObj) ){
+                 echo "<span>No hay clientes Registrados .</span>";
+                 echo "<button type='button' id='clientesVista' class='btn btn-success'>Clientes </button><br>";
+               }else{
+                echo "<select class='form-control'>";
+                      foreach ($arrayObj as $clave => $valor) {
+                         echo "<option value='".$arrayObj[$clave]->getId_cliente()."'>".$arrayObj[$clave]->getNombre()." - ".$arrayObj[$clave]->getRazon_social()."</option>";
+                      }
+                    echo "</select>";
+               }
+
+              ?>
             </div>
             <hr>
             <div class="form-group ">
               <label>Listado de Vehiculos Registrados </label>
-              <select class="form-control">
-                <option>option 1</option>
-              </select>
+              <?php
+               $objVehiculo= new vehiculoController();
+               $arrayObj1 = array();
+               $arrayObj1 = $objVehiculo->listaVehiculos()();
+               if(is_null( $arrayObj1) ){
+                 echo "<span>No hay vehiculos Registrados .</span>";
+                 echo "<button type='button' id='vehiculos_main' class='btn btn-success'>Vehiculos </button>";
+               }else{
+                echo "<select class='form-control'>";
+                      foreach ($arrayObj1 as $clave => $valor) {
+                         $ob = $objCliente->clienteId($arrayObj[$clave]->getId_cliente() );
+                         echo "<option value='".$arrayObj1[$clave]->getId_vehiculo()."'> ".$arrayObj1[$clave]->getPlaca()." - ".$ob->getRazon_social()." - ".$ob->getNombre()."</option>";
+                      }
+                    echo "</select>";
+               }
+
+              ?>
               <p class="help-block">utilize esta opcion si desea cargar un nuevo vehiculo.</p>
               <button type="button" id="cargar_Conductor_Servicio" class="btn btn-success">Cargar Vehiculo</button>
             </div>

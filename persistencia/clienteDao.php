@@ -38,17 +38,16 @@ class clienteDao
       return   $arrayClientes;
     }
 
-    public function clienteId($id_cliente){
+    public function listaClienteActivos(){
 
       $data_source = new DataSource();
-      $data_table = $data_source->ejecutarConsulta("SELECT * FROM `cliente` where id_cliente = :id "
-      ,array(':id'=>$id_cliente));
+      $data_table = $data_source->ejecutarConsulta("SELECT * FROM `cliente` ");
       $objClientes = null;
+      $arrayClientes = array();
 
-   if( count($data_table)>0){
       foreach ($data_table as $clave => $valor) {
-          $objClientes = new empleado(
-          $data_table[$clave]["id_empleado"],
+      $objClientes = new cliente(
+          $data_table[$clave]["id_cliente"],
           $data_table[$clave]["id_usuario"],
           $data_table[$clave]["razon_social"],
           $data_table[$clave]["nombre_contacto"],
@@ -62,7 +61,34 @@ class clienteDao
           $data_table[$clave]["email1"],
           $data_table[$clave]["email2"],
           $data_table[$clave]["email3"]);
+          array_push(  $arrayClientes, $objClientes);
         }
+        return   $arrayClientes;
+      }
+
+    public function clienteId($id_cliente){
+
+      $data_source = new DataSource();
+      $data_table = $data_source->ejecutarConsulta("SELECT * FROM `cliente` where id_cliente = :id "
+      ,array(':id'=>$id_cliente));
+      $objClientes = null;
+
+   if( count($data_table)>0){
+          $objClientes = new cliente(
+          $data_table[0]["id_empleado"],
+          $data_table[0]["id_usuario"],
+          $data_table[0]["razon_social"],
+          $data_table[0]["nombre_contacto"],
+          $data_table[0]["tipo_documento"],
+          $data_table[0]["numero_documento"],
+          $data_table[0]["direccion"],
+          $data_table[0]["ciudad"],
+          $data_table[0]["fijo"],
+          $data_table[0]["celular1"],
+          $data_table[0]["celular2"],
+          $data_table[0]["email1"],
+          $data_table[0]["email2"],
+          $data_table[0]["email3"]);
         return $objClientes;}
         else{
           return false;

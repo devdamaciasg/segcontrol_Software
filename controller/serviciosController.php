@@ -35,6 +35,16 @@ class serviciosController{
     return  $Objservicios->listaServicios();
   }
 
+  public function listaTodosServiciosActivos(){
+    $Objservicios=new serviciosDao();
+    return  $Objservicios->listaTodosServiciosActivos();
+  }
+
+  public function listaTodosServiciosCerrados(){
+    $Objservicios=new serviciosDao();
+    return  $Objservicios->listaTodosServiciosCerrados();
+  }
+
   public function cerrarServicioActual($id_servicio){
     $Objservicios=new serviciosDao();
     return  $Objservicios->cerrarServicio($id_servicio);

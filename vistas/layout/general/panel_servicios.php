@@ -46,7 +46,7 @@
           &nbsp;
         </h3>
         <p>
-            Aseguradores
+            Aseguradoras
         </p>
       </div>
       <div class="icon">

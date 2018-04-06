@@ -13,7 +13,7 @@ class vehiculoDao
     $data_table = $data_source->ejecutarConsulta("SELECT * FROM `vehiculo` ");
     $objVehiculo = null;
     $arrayVehiculo = array();
-
+   if(count($data_table)>0){
     foreach ($data_table as $clave => $valor) {
         $objVehiculo = new vehiculo(
         $data_table[$clave]["id_vehiculo"],
@@ -25,6 +25,7 @@ class vehiculoDao
         array_push($arrayVehiculo, $objConductor);
       }
       return $arrayVehiculo;
+    }else{return null;}
     }
 
     public function listaVehiculoId($id_vehiculo){

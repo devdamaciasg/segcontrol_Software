@@ -25,6 +25,11 @@ class clienteController{
       return   $ObjCliente->listaCliente();
     }
 
+    public function listaClientesActivos(){
+      $ObjCliente=new clienteDao();
+      return   $ObjCliente->listaClienteActivos();
+    }
+
     public function clienteId($id_cliente){
       $ObjCliente=new clienteDao();
       return $ObjCliente->listaClienteId($id_cliente);

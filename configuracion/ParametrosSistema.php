@@ -7,6 +7,12 @@ private  $IPBD="localhost";
 private  $usuarioBD="root";
 private  $claveBD="";
 
+//server
+// private  $nombreBD="segcontrol";
+// private  $IPBD="localhost";
+// private  $usuarioBD="segcontrol";
+// private  $claveBD="segcontrol";
+
 function ParametrosSistema(){}
 
 //nombre de la base de dato

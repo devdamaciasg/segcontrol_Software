@@ -58,7 +58,8 @@ $objController=new usuariosController();
       </div>
       <a href="#" id="perfil" class="small-box-footer">
         Acceder <i class="fa fa-arrow-circle-right"></i>
-      </a>
+      </
+      a>
     </div>
   </div><!-- ./col -->
 
