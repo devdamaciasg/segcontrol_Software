@@ -7,7 +7,6 @@ require_once (PERSISTENCIA_PATH."DataSource.php");
 require_once (MODEL_PATH."empleado.php");
 require_once (MODEL_PATH."cliente.php");
 require_once (MODEL_PATH."usuario.php");
-require_once (MODEL_PATH."clienteUsuario.php");
 
 class usuariosDao
 {
@@ -16,7 +15,6 @@ class usuariosDao
 		$data_source = new DataSource();
 		$data_sesion_empleado = $data_source->ejecutarConsulta(" SELECT * FROM usuario where id_usuario = :u  ",array(':u'=>$id));
 		if(count($data_sesion_empleado) >= 0){
-
 					$objUsu  = new usuario(
 					$data_sesion_empleado[0]["id_usuario"],
 					$data_sesion_empleado[0]["id_rol"],
@@ -27,13 +25,8 @@ class usuariosDao
 		}else{
 			return null;
 		}
-
 	}//end method
-
-
 	public function validadSesion($u,$c){
-		echo $u." ".$c;
-
 		$data_source = new DataSource();
 		$data_sesion_cliente = $data_source->ejecutarConsulta(" SELECT `usuario`.`id_usuario` as 'id' , `usuario`.`rol` as 'rol' ,
  		'usuario.estado' as 'estado', 'usuario.clave' as 'clave',  'usuario.usuario' as 'nombre'
@@ -45,11 +38,7 @@ class usuariosDao
 			, `usuario`.`estado` as 'estado', `usuario`.`clave` as 'clave', `usuario`.`usuario` as 'nombre'
 			FROM `empleado` JOIN `usuario` on ( `empleado`.`id_usuario` = `usuario`.`id_usuario` )JOIN  `rol`  ON( `usuario`.`id_rol`=`rol`.`id_rol` )
 			where (`usuario`.`usuario` = :u and `usuario`.`clave` = :c) AND `usuario`.`estado`='ACTIVO' ",array(':u'=>$u,':c'=>$c) );
-
-
-
 		if(count($data_sesion_empleado) >= 1){
-
 					$objUsu  = new usuario(
 					$data_sesion_empleado[0]["id"],
 					$data_sesion_empleado[0]["rol"],
@@ -58,9 +47,7 @@ class usuariosDao
 					$data_sesion_empleado[0]["estado"]);
 			return $objUsu;
 		}else{
-
 			if(count($data_sesion_cliente) >= 1){
-
 							$objUsu  = new usuario(
 							$data_sesion_empleado[0]["id"],
 							$data_sesion_empleado[0]["rol"],
@@ -69,11 +56,9 @@ class usuariosDao
 							$data_sesion_empleado[0]["estado"]);
 				return $objUsu;
 			}else{
-
 				return null;
 			}
 		}
-
 	}//end method
 
 
@@ -160,10 +145,5 @@ class usuariosDao
 		':id'=> $id));
 		return $resultado;
 	}
-
-
-
-
-
 }//end class
 ?>

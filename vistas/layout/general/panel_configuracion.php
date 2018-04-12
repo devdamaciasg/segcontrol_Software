@@ -8,7 +8,7 @@
           &nbsp;
         </h3>
         <p>
-          Parametros del Sistema General
+          Parametros del Sistema <br>General
         </p>
       </div>
       <div class="icon">
@@ -27,7 +27,7 @@
           &nbsp;
         </h3>
         <p>
-            Copias de Seguridad y respaldo
+            Copias de Seguridad <br>y respaldo
         </p>
       </div>
       <div class="icon">

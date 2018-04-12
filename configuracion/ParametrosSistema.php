@@ -2,16 +2,16 @@
 
 class ParametrosSistema{
 
-// private  $nombreBD="segcontrol";
-// private  $IPBD="localhost";
-// private  $usuarioBD="root";
-// private  $claveBD="";
-
-
 private  $nombreBD="segcontrol";
 private  $IPBD="localhost";
-private  $usuarioBD="hhgomez";
-private  $claveBD="GAUS2871";
+private  $usuarioBD="root";
+private  $claveBD="";
+
+
+// private  $nombreBD="segcontrol";
+// private  $IPBD="localhost";
+// private  $usuarioBD="hhgomez";
+// private  $claveBD="GAUS2871";
 
 public function __construct(){}
 

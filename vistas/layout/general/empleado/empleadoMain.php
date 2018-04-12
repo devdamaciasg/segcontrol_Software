@@ -19,13 +19,10 @@ $objUsuario= new usuariosController();
         </div>
         <div class="col-md-12">
           <button class='btn btn-danger' id='actualizar_tabla_empleado' value=""><i class="fa fa-refresh"></i></button>
-          <button class='btn btn-warning' id='actualizar_tabla_empleado' value=""><i class="fa fa-refresh"></i>Crear Empleado</button>
-
+          <button class='btn btn-warning' id='crear__empleado' value=""><i class="fa fa-save"></i> Crear Empleado</button>
         </div>
       </div>
-
         <div class="box-body">
-
           <?php
           $arrayObj = array();
           $arrayObj = $objEmpleado->listaEmpleados();
@@ -40,7 +37,6 @@ $objUsuario= new usuariosController();
             <th>Rol</th>
             <th>Usuario</th>
             <th>Nombre</th>
-            <th>Razon Social</th>
             <th>Accion</th>
             </tr> ";
             foreach ($arrayObj as $clave => $valor) {
@@ -58,7 +54,6 @@ $objUsuario= new usuariosController();
               <td>
               <button class='btn btn-primary' id='id_usuario' value=".$arrayObj[$clave]->getId_usuario()."><i class='fa fa-search'></i> Ver mas</button>";
               if( strcmp($estado,"ACTIVO")==0 ){
-
                 echo "&nbsp<button class='btn btn-success' id='desactivar_empleado' value=".$arrayObj[$clave]->getId_usuario()."><i class='fa  fa-exchange'></i> Desactivar</button>";
               }else{
                 echo "&nbsp<button class='btn btn-success' id='activar_empleado' value=".$arrayObj[$clave]->getId_usuario()."><i class='fa  fa-exchange'></i> Activar</button>";}
