@@ -1,6 +1,6 @@
 <?php
 include_once ($_SERVER['DOCUMENT_ROOT'].'/directorio.php');
-require_once(CONTROLLER_PATH."route/sesion/sesionController.php");
+require_once(CONTROLLER_PATH."sesionController.php");
 
 $u = $_POST['usuario'];
 $c = $_POST['clave'];

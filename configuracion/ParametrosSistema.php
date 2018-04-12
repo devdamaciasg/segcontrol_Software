@@ -2,11 +2,11 @@
 
 class ParametrosSistema{
 
-/*private  $nombreBD="segcontrol";
-private  $IPBD="localhost";
-private  $usuarioBD="root";
-private  $claveBD="";
-*/
+// private  $nombreBD="segcontrol";
+// private  $IPBD="localhost";
+// private  $usuarioBD="root";
+// private  $claveBD="";
+
 
 private  $nombreBD="segcontrol";
 private  $IPBD="localhost";

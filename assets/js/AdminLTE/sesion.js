@@ -2,7 +2,6 @@
  * Author: miguel angel claros
  * Date:
  * Description:
- *
  !**/
  /** funcion para validar entrda de usuario y clave al sistema***/
  $(document).on('click','#validarSesion',function(e){

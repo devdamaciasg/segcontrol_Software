@@ -1,6 +1,6 @@
 <?php
 include_once ($_SERVER['DOCUMENT_ROOT'].'/directorio.php');
-require_once(CONTROLLER_PATH."route/sesion/sesionController.php");
+require_once(CONTROLLER_PATH."sesionController.php");
 
 require_once (PERSISTENCIA_PATH."DataSource.php");
 

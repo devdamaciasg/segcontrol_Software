@@ -1,9 +1,7 @@
-
 <?php
-include_once ($_SERVER['DOCUMENT_ROOT'].'directorio.php');
 
-require_once(PERSISTENCIA_PATH."usuariosDao.php");
-
+include_once ($_SERVER['DOCUMENT_ROOT'].'/directorio.php');
+require_once(PERSISTENCIA_PATH.'usuariosDao.php');
 
 class sesionController{
 
@@ -13,6 +11,7 @@ class sesionController{
     if(is_null($obj) ){
         echo  "<span> No se encuentra el usuario o la contraseña es incorrecta </span>";
     }else{
+    	echo "valido perfectamente ";
       $cookie = new usuario(
         $obj->getId_usuario(),
         $obj->getId_rol(),
