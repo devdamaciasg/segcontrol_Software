@@ -1,12 +1,13 @@
 <?php
-require_once ($_SERVER['DOCUMENT_ROOT']."/segcontrol/persistencia/DataSource.php");
-require_once ($_SERVER['DOCUMENT_ROOT']."/segcontrol/model/servicios.php");
-require_once ($_SERVER['DOCUMENT_ROOT']."/segcontrol/model/minuta.php");
-require_once ($_SERVER['DOCUMENT_ROOT']."/segcontrol/model/conductor.php");
-require_once ($_SERVER['DOCUMENT_ROOT']."/segcontrol/model/vehiculo.php");
-require_once ($_SERVER['DOCUMENT_ROOT']."/segcontrol/model/empleado.php");
-require_once ($_SERVER['DOCUMENT_ROOT']."/segcontrol/model/usuario.php");
-require_once ($_SERVER['DOCUMENT_ROOT']."/segcontrol/model/cliente.php");
+include_once ($_SERVER['DOCUMENT_ROOT'].'/directorio.php');
+require_once (PERSISTENCIA_PATH."DataSource.php");
+require_once (MODEL_PATH."servicios.php");
+require_once (MODEL_PATH."minuta.php");
+require_once (MODEL_PATH."conductor.php");
+require_once (MODEL_PATH."vehiculo.php");
+require_once (MODEL_PATH."empleado.php");
+require_once (MODEL_PATH."usuario.php");
+require_once (MODEL_PATH."cliente.php");
 class clienteDao
 {
 

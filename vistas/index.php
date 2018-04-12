@@ -1,11 +1,10 @@
-
 <!DOCTYPE html>
 <html class="bg-black fondo ">
     <?php require_once("head.php");?>
 
-    <body class="bg-black fondo "  onload="time()">
+    <body class="bg-black fondo " >
 
-        <div class="form-box " id="login-box">
+        <div class="form-box" id="login-box">
 
             <div class="header">PLATAFORMA <br>SEGCONTROL GPS <br><strong>Iniciar sesión</strong></div>
             <form  method="post">

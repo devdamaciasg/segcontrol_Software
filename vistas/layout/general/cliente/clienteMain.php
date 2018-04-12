@@ -1,6 +1,7 @@
 <?php
-require_once($_SERVER['DOCUMENT_ROOT']."/segcontrol/controller/usuariosController.php");
-require_once($_SERVER['DOCUMENT_ROOT']."/segcontrol/controller/clienteController.php");
+include_once ($_SERVER['DOCUMENT_ROOT'].'/directorio.php');
+require_once(CONTROLLER_PATH."usuariosController.php");
+require_once(CONTROLLER_PATH."clienteController.php");
 $objCliente= new clienteController();
 $objUsuario= new usuariosController();
 ?>

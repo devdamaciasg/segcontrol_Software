@@ -1,7 +1,8 @@
 <?php
-require_once($_SERVER['DOCUMENT_ROOT']."/segcontrol/controller/usuariosController.php");
-require_once($_SERVER['DOCUMENT_ROOT']."/segcontrol/controller/clienteController.php");
-require_once($_SERVER['DOCUMENT_ROOT']."/segcontrol/controller/empleadoController.php");
+include_once ($_SERVER['DOCUMENT_ROOT'].'/directorio.php');
+require_once(CONTROLLER_PATH."usuariosController.php");
+require_once(CONTROLLER_PATH."clienteController.php");
+require_once(CONTROLLER_PATH."empleadoController.php");
 
 $sesion=unserialize(urldecode($_GET["array"]));
 

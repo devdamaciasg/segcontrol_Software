@@ -1,5 +1,6 @@
 <?php
-require_once($_SERVER['DOCUMENT_ROOT']."/segcontrol/controller/usuariosController.php");
+include_once ($_SERVER['DOCUMENT_ROOT'].'/directorio.php');
+require_once(CONTROLLER_PATH."usuariosController.php");
 $objController=new usuariosController();
 $arrayObj=$objController->cargarListaCliente(0);
 ?>

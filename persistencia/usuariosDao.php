@@ -1,9 +1,13 @@
 <?php
-require_once ($_SERVER['DOCUMENT_ROOT']."/segcontrol/persistencia/DataSource.php");
-require_once ($_SERVER['DOCUMENT_ROOT']."/segcontrol/model/empleado.php");
-require_once ($_SERVER['DOCUMENT_ROOT']."/segcontrol/model/cliente.php");
-require_once ($_SERVER['DOCUMENT_ROOT']."/segcontrol/model/usuario.php");
-require_once ($_SERVER['DOCUMENT_ROOT']."/segcontrol/model/clienteUsuario.php");
+include_once ($_SERVER['DOCUMENT_ROOT'].'/directorio.php');
+require_once(CONTROLLER_PATH."route/sesion/sesionController.php");
+
+require_once (PERSISTENCIA_PATH."DataSource.php");
+
+require_once (MODEL_PATH."empleado.php");
+require_once (MODEL_PATH."cliente.php");
+require_once (MODEL_PATH."usuario.php");
+require_once (MODEL_PATH."clienteUsuario.php");
 
 class usuariosDao
 {

@@ -216,8 +216,6 @@ require_once($_SERVER['DOCUMENT_ROOT']."/segcontrol/vistas/recursosPHP/Colombia.
          <h4 class="modal-title">Modal Header</h4>
        </div>
        <div class="modal-body">
-
-
                            <h1>Imagen</h1><br/>
                    		<hr>
                    	        <form id="uploadimage" action="" method="post" enctype="multipart/form-data">
@@ -229,7 +227,6 @@ require_once($_SERVER['DOCUMENT_ROOT']."/segcontrol/vistas/recursosPHP/Colombia.
                    					<input type="submit" value="Upload" class="submit" />
                    	       </div>
                    		</form>
-
                    	<h4 id='loading' ><img src="<?php echo '../assets/img/loading_circle.gif' ?>" />&nbsp;&nbsp;Loading...</h4>
                    	<div id="message"></div>
        </div>
@@ -239,4 +236,3 @@ require_once($_SERVER['DOCUMENT_ROOT']."/segcontrol/vistas/recursosPHP/Colombia.
      </div>
    </div>
  </div>
-<?php require_once($_SERVER['DOCUMENT_ROOT']."/assets/js/AdminLTE/recursosJS/colombia.js"); ?>

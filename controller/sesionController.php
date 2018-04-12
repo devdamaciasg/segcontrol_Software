@@ -1,6 +1,9 @@
 
 <?php
-require_once($_SERVER['DOCUMENT_ROOT']."/segcontrol/persistencia/usuariosDao.php");
+include_once ($_SERVER['DOCUMENT_ROOT'].'directorio.php');
+
+require_once(PERSISTENCIA_PATH."usuariosDao.php");
+
 
 class sesionController{
 

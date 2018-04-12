@@ -11,6 +11,7 @@
  var user=document.getElementById("usuario").value;
  var pass=document.getElementById("clave").value;
  var params = { "usuario" : user, "clave" : pass };
+ console.log(user+" "+pass);
  		//llamada al fichero PHP con AJAX
  		$.ajax({
  			data:   params,

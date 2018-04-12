@@ -1,5 +1,6 @@
 <?php
-require_once($_SERVER['DOCUMENT_ROOT']."/segcontrol/configuracion/ParametrosSistema.php");
+include($_SERVER['DOCUMENT_ROOT']."/directorio.php");
+require_once(ROOT_PATH."configuracion/ParametrosSistema.php");
 class DataSource
 {
 	private $cadenaConexion;

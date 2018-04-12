@@ -2,18 +2,18 @@
 
 class ParametrosSistema{
 
-private  $nombreBD="segcontrol";
+/*private  $nombreBD="segcontrol";
 private  $IPBD="localhost";
 private  $usuarioBD="root";
 private  $claveBD="";
+*/
 
-//server
-// private  $nombreBD="segcontrol";
-// private  $IPBD="localhost";
-// private  $usuarioBD="segcontrol";
-// private  $claveBD="segcontrol";
+private  $nombreBD="segcontrol";
+private  $IPBD="localhost";
+private  $usuarioBD="hhgomez";
+private  $claveBD="GAUS2871";
 
-function ParametrosSistema(){}
+public function __construct(){}
 
 //nombre de la base de dato
  function getNombreBD(){return $this->nombreBD;}

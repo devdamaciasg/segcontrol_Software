@@ -1,7 +1,8 @@
 <?php
-require_once($_SERVER['DOCUMENT_ROOT']."/segcontrol/persistencia/usuariosDao.php");
-require_once($_SERVER['DOCUMENT_ROOT']."/segcontrol/model/empleado.php");
-require_once($_SERVER['DOCUMENT_ROOT']."/segcontrol/model/cliente.php");
+include_once ($_SERVER['DOCUMENT_ROOT'].'/directorio.php');
+require_once(PERSISTENCIA_PATH ."usuariosDao.php");
+require_once(MODEL_PATH ."empleado.php");
+require_once(MODEL_PATH ."cliente.php");
 
 class usuariosController{
 

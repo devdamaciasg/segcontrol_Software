@@ -1,5 +1,6 @@
 <?php
-require_once($_SERVER['DOCUMENT_ROOT']."/segcontrol/usuariosController.php");
+include_once ($_SERVER['DOCUMENT_ROOT'].'/directorio.php');
+require_once(ROOT_PATH."usuariosController.php");
 
 $id = $_POST['usuario'];
 $var = new sesionController();

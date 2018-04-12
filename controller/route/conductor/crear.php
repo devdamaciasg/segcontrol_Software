@@ -1,6 +1,8 @@
 <?php
-require_once($_SERVER['DOCUMENT_ROOT']."/segcontrol/controller/conductorController.php");
-require_once($_SERVER['DOCUMENT_ROOT']."/segcontrol/model/conductor.php");
+
+include_once ($_SERVER['DOCUMENT_ROOT'].'/directorio.php');
+require_once(CONTROLLER_PATH."conductorController.php");
+require_once(MODEL_PATH."conductor.php");
 
 $cc = $_POST['cc'];
 $nombre= $_POST['nombre'];
