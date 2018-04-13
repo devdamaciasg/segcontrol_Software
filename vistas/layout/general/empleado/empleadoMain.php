@@ -19,7 +19,7 @@ $objUsuario= new usuariosController();
         </div>
         <div class="col-md-12">
           <button class='btn btn-danger' id='actualizar_tabla_empleado' value=""><i class="fa fa-refresh"></i></button>
-          <button class='btn btn-warning' id='crear__empleado' value=""><i class="fa fa-save"></i> Crear Empleado</button>
+          <button class='btn btn-warning' id='crear_empleado' value=""><i class="fa fa-save"></i> Crear Empleado</button>
         </div>
       </div>
         <div class="box-body">

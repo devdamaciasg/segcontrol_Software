@@ -62,31 +62,7 @@ $(function() {
         "GB": 320, //Great Britain
         "RU": 3000 //Russia
     };
-    //World map by jvectormap
-    $('#world-map').vectorMap({
-        map: 'world_mill_en',
-        backgroundColor: "#fff",
-        regionStyle: {
-            initial: {
-                fill: '#e4e4e4',
-                "fill-opacity": 1,
-                stroke: 'none',
-                "stroke-width": 0,
-                "stroke-opacity": 1
-            }
-        },
-        series: {
-            regions: [{
-                    values: visitorsData,
-                    scale: ["#3c8dbc", "#2D79A6"], //['#3E5E6B', '#A6BAC2'],
-                    normalizeFunction: 'polynomial'
-                }]
-        },
-        onRegionLabelShow: function(e, el, code) {
-            if (typeof visitorsData[code] != "undefined")
-                el.html(el.html() + ': ' + visitorsData[code] + ' new visitors');
-        }
-    });
+
 
     //Sparkline charts
     var myvalues = [15, 19, 20, -22, -33, 27, 31, 27, 19, 30, 21];
@@ -145,7 +121,7 @@ $(function() {
             {
                 title: 'All Day Event',
                 start: new Date(y, m, 1),
-                backgroundColor: "#3c8dbc", //light-blue 
+                backgroundColor: "#3c8dbc", //light-blue
                 borderColor: "#3c8dbc" //light-blue
             },
             {
