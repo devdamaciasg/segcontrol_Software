@@ -1,1 +1,4 @@
-<?php header('Location: vistas/index.php'); ?>
+<?php
+
+
+header('Location: vistas/index.php'); ?>

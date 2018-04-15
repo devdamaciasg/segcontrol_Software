@@ -24,7 +24,7 @@
 <meta name="description" content="">
 
 <!-- Font awesome -->
-
+    <link rel="stylesheet" href="../assets/css/style.css">
   <link href='https://fonts.googleapis.com/css?family=Work+Sans:400,600' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
   <link rel="stylesheet" href="../assets/css/ionicons.min.css">
@@ -42,6 +42,21 @@
    background-repeat: no-repeat;
    background-position: -110px;}
 </style>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+<script type="text/javascript" src="../assets/js/jquery.min.js"></script>
+<script type="text/javascript" src="../assets/js/jquery-ui-1.10.3.min.js"></script>
+<script type="text/javascript" src="../assets/js/bootstrap.min.js"></script>
+<!-- <script type="text/javascript" src="../assets/js/plugins/morris/morris.min.js"></script> -->
 
+<script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+<script type="text/javascript" src="../assets/js/plugins/sparkline/jquery.sparkline.min.js"></script>
+<script type="text/javascript" src="../assets/js/plugins/fullcalendar/fullcalendar.min.js"></script>
+<!-- <script type="text/javascript" src="../assets/js/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script> -->
+<script type="text/javascript" src="../assets/js/plugins/jqueryKnob/jquery.knob.js"></script>
+<script type="text/javascript" src="../assets/js/plugins/daterangepicker/daterangepicker.js"></script>
+<!-- <script type="text/javascript" src="../assets/js/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script> -->
+<script type="text/javascript" src="../assets/js/plugins/iCheck/icheck.min.js"></script>
+<!-- <script type="text/javascript" src="../assets/js/AdminLTE/dashboard.js"></script>
+<script type="text/javascript" src="../assets/js/AdminLTE/app.js"></script> -->
 
 </head>
