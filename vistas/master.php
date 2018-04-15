@@ -64,7 +64,7 @@ if(intval($rol)==1){
       <section class="content-header">
         <h1>
           PANEL PRINCIPAL
-          <small>Ver 1.0 Alpha </small>
+          <small>Ver 1.5 Beta </small>
         </h1>
         <div id="smg_panel"></div>
       </section>

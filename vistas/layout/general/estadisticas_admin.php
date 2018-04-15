@@ -1,5 +1,5 @@
 <?php
-require_once($_SERVER['DOCUMENT_ROOT']."/segcontrol/controller/usuariosController.php");
+require_once($_SERVER['DOCUMENT_ROOT']."/app/segcontrol/controller/usuariosController.php");
 $objController=new usuariosController();
 ?>
 <div class="row">

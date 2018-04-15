@@ -1,6 +1,6 @@
 <?php
-require_once($_SERVER['DOCUMENT_ROOT']."/segcontrol/controller/usuariosController.php");
-require_once($_SERVER['DOCUMENT_ROOT']."/segcontrol/controller/empleadoController.php");
+require_once($_SERVER['DOCUMENT_ROOT']."/app/segcontrol/controller/usuariosController.php");
+require_once($_SERVER['DOCUMENT_ROOT']."/app/segcontrol/controller/empleadoController.php");
  $objEmpleado= new empleadoController();
  $objUsuario= new usuariosController();
 ?>

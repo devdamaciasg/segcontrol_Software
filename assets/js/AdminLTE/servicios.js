@@ -1,7 +1,7 @@
+/**************************************************************************************************************************/
 $(document).on('click','#verServicio',function(e){
   e.stopPropagation();
   e.preventDefault();
-
   var id=document.getElementById("verServicio").value;
   console.log(id);
   var params = { "id" : id};
@@ -21,13 +21,10 @@ $(document).on('click','#verServicio',function(e){
       $("#smg_panel").html("");
     }});
   });
-
+/**************************************************************************************************************************/
   $(document).on('click','#agregar_servicio_main',function(e){
     e.stopPropagation();
     e.preventDefault();
-
-
-
     //llamada al fichero PHP con AJAX
     $.ajax({
       url:   '../vistas/layout/general/servicios/nuevoServicio.php',
@@ -43,19 +40,12 @@ $(document).on('click','#verServicio',function(e){
 
         $("#smg_panel").html("");
       }
-
     });
-
-  }
-
-);
-
+  });
+/**************************************************************************************************************************/
 $(document).on('click','#verBitacora',function(e){
   e.stopPropagation();
   e.preventDefault();
-
-  console.log('ww');
-
   //llamada al fichero PHP con AJAX
   $.ajax({
     url:   '../vistas/layout/general/servicios/historialServicio.php',
@@ -71,10 +61,8 @@ $(document).on('click','#verBitacora',function(e){
       $("#smg_panel").html("");
     }});
   });
-
-
+/**************************************************************************************************************************/
   function regresar(){
-
     $.ajax({
       url:   '../vistas/layout/general/conductor/conductorMain.php',
       type:  'post',
@@ -89,19 +77,16 @@ $(document).on('click','#verBitacora',function(e){
 
         $("#smg_panel").html("");
       }
-
     });
-
   }
-
+/**************************************************************************************************************************/
   function botones() {
     console.log('bine');
     var actualizarBtn = document.getElementById("opciones_verConductor");
     actualizarBtn.style.visibility  = 'hidden'; // No se ve
     actualizarBtn.style.display = 'none'; // No ocupa espacio
   }
-
-
+/**************************************************************************************************************************/
   $(document).on('click','#todos_servicio_listado',function(e){
     e.stopPropagation();
     e.preventDefault();
@@ -123,6 +108,7 @@ $(document).on('click','#verBitacora',function(e){
         $("#smg_panel").html("");
       }});
     });
+/**************************************************************************************************************************/
     $(document).on('click','#activos_servicio_listado',function(e){
       e.stopPropagation();
       e.preventDefault();
@@ -144,6 +130,7 @@ $(document).on('click','#verBitacora',function(e){
           $("#smg_panel").html("");
         }});
       });
+/**************************************************************************************************************************/
       $(document).on('click','#cerrados_servicio_listado',function(e){
         e.stopPropagation();
         e.preventDefault();
@@ -165,9 +152,7 @@ $(document).on('click','#verBitacora',function(e){
             $("#smg_panel").html("");
           }});
         });
-
-
-
+/**************************************************************************************************************************/
         function readURL(input) {
           if (input.files && input.files[0]) {
 
@@ -233,3 +218,4 @@ $(document).on('click','#verBitacora',function(e){
         	$('.image-upload-wrap2').bind('dragleave', function () {
         		$('.image-upload-wrap2').removeClass('image-dropping');
         });
+/**************************************************************************************************************************/

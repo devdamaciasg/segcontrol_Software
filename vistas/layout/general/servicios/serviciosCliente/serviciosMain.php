@@ -1,3 +1,4 @@
+
 <?php
 include_once ($_SERVER['DOCUMENT_ROOT'].'/directorio.php');
 require_once(CONTROLLER_PATH."conductorController.php");
@@ -90,8 +91,9 @@ require_once(CONTROLLER_PATH."serviciosController.php");
             </div><!-- /.box-body -->
           </div>
         </div>
+
       </div>
+
     </div>
-  </div>
     <script type="text/javascript" src="../assets/js/AdminLTE/servicios.js"></script>
     <script type="text/javascript" src="../assets/js/AdminLTE/bitacora.js"></script>

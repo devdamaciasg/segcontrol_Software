@@ -1,5 +1,5 @@
 <?php
-require_once($_SERVER['DOCUMENT_ROOT']."/segcontrol/controller/conductorController.php");
+require_once($_SERVER['DOCUMENT_ROOT']."/app/segcontrol/controller/conductorController.php");
 $objConductor= new conductorController();
 
 ?>

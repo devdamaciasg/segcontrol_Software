@@ -7,7 +7,6 @@
     </div>
     <div class="pull-center info">
       <p>Bienvenido<br>  <?php echo "".$sesion_nombre ?></p>
-
       <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
     </div>
   </div>
@@ -44,5 +43,7 @@
       </a>
     </li>
   </ul>
+  <br>
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 </section>
 <!-- /.sidebar -->
