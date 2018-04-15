@@ -9,8 +9,9 @@
       </div><!-- /.box-header -->
       <div id ="mensaje"></div>
       <div class="box-body">
+
         <form role="form">
-          <div class="box-body">
+
             <div class="form-group col-xs-8">
             <label >Documento de Identificacion</label>
              <div class="input-group ">
@@ -47,12 +48,13 @@
               <p class="help-block">Opcional.</p>
             </div>
 
-          </div><!-- /.box-body -->
+
 
           <div class="box-footer col-xs-8">
             <button type="submit" class="btn btn-primary" id="guardar_conductor_main">Guardar</button>
           </div>
         </form>
-      </div><!-- /.box-body -->
+</div>
     </div>
   </div>
+</div>

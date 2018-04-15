@@ -56,10 +56,9 @@ $objController=new usuariosController();
       <div class="icon">
         <i class="ion ion-card"></i>
       </div>
-      <a href="#" id="perfil" class="small-box-footer">
+      <a href="" id="perfil" class="small-box-footer">
         Acceder <i class="fa fa-arrow-circle-right"></i>
-      </
-      a>
+      </a>
     </div>
   </div><!-- ./col -->
 

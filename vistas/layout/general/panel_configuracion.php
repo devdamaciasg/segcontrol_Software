@@ -38,6 +38,26 @@
       </a>
     </div>
   </div><!-- ./col -->
+  <div class="col-lg-3 col-xs-6">
+    <!-- small box -->
+    <div class="small-box bg-red">
+      <div class="inner">
+        <h3>
+          &nbsp;
+        </h3>
+        <p>
+          Estadisticas<br> del Sistema
+
+        </p>
+      </div>
+      <div class="icon">
+        <i class="fa fa-tasks"></i>
+      </div>
+      <a href="#" id="Estadisticas del Sistema" class="small-box-footer">
+        Acceder <i class="fa fa-arrow-circle-right"></i>
+      </a>
+    </div>
+  </div><!-- ./col -->
 
 
 

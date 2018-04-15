@@ -32,6 +32,21 @@
         <i class="fa fa-th"></i> <span>Servicio</span>
       </a>
     </li>
+    <li class="active">
+      <a>
+      Accesos Directos
+      </a>
+    </li>
+    <li>
+      <a href="https://p3plcpnl0781.prod.phx3.secureserver.net:2096/logout/?locale=es" >
+        <i class="fa fa-envelope"></i> <span>Web Mail </span>
+      </a>
+    </li>
+    <li>
+      <a href="http://www.segcontrol.com.co/" >
+        <i class="fa fa-globe"></i> <span>Sitio Web</span>
+      </a>
+    </li>
   </ul>
   <br>
   <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>

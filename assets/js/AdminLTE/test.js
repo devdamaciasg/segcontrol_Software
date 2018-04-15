@@ -21,9 +21,9 @@ function cargar(){
 
 function cargar2(){
 
-  var id = document.getElementById("depar2").value;
+  var id2 = document.getElementById("depar2").value;
 
-  var params = { "id" : id};
+  var params = { "id" : id2};
   $.ajax({
     data:   params,
     url:   '../vistas/recursosPHP/departamentos0.php',
@@ -36,6 +36,6 @@ function cargar2(){
     },
     success:  function (response) {
 
-      $("#select_municipio").html(response);
+      $("#select_municipio2").html(response);
     }});
 }

@@ -1,10 +1,10 @@
 <?php
 include_once ($_SERVER['DOCUMENT_ROOT'].'/directorio.php');
 require_once(PERSISTENCIA_PATH."DataSource.php");
-$id = $_POST['id'];
+$id2 = $_POST['id'];
 
 $data_source = new DataSource();
-$data_table = $data_source->ejecutarConsulta("SELECT * FROM `municipios` where  departamento_id = :id",array(':id'=>$id));
+$data_table = $data_source->ejecutarConsulta("SELECT * FROM `municipios` where  departamento_id = :id",array(':id'=>$id2));
 echo "<div >
        <label>Municipios</label>
        <select class='form-control' id='municipio2' name='municipio2'>

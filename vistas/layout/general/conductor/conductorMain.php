@@ -1,5 +1,7 @@
 <?php
-require_once($_SERVER['DOCUMENT_ROOT']."/segcontrol/controller/conductorController.php");
+include_once ($_SERVER['DOCUMENT_ROOT'].'/directorio.php');
+require_once(CONTROLLER_PATH."conductorController.php");
+
 $arrayConductor = array();
 $objConductor = new conductorController();
 $arrayConductor=$objConductor->listaConductor();
