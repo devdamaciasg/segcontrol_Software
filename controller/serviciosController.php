@@ -21,6 +21,12 @@ class serviciosController{
     return  $Objservicios->actualizarServicio($servicios);
   }
 
+  public function serviciosPorId($id){
+
+    $Objservicios=new serviciosDao();
+    return  $Objservicios->servicioId($id);
+  }
+
   public function serviciosPorCliente($id){
     $Objservicios=new serviciosDao();
     return  $Objservicios->servicioCli($id);

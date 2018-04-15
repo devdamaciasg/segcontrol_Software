@@ -127,39 +127,39 @@ class serviciosDAO{
             return null;
           }
         }
+/****************************************************************************************************************************************/
             public function servicioId($id){
+
               $data_source = new DataSource();
               $data_table = $data_source->ejecutarConsulta("SELECT * FROM `servicio` where id_servicio = :id",array(
                 ':id'=>$id));
                 $objServicios = null;
-                if(count($data_table) == 1){
-                  foreach ($data_table as $clave => $valor) {
-                    $objServicios = new servicio();
-                    $objServicios->setId_servicio($data_table[$clave]["id_servicio"]);
-                    $objServicios->setId_empleado($data_table[$clave]["id_conductor"]);
-                    $objServicios->setId_conductor($data_table[$clave]["id_vehiculo"]);
-                    $objServicios->setId_vehiculo($data_table[$clave]["id_cliente"]);
-                    $objServicios->setId_cliente($data_table[$clave]["id_empleado"]);
-                    $objServicios->setManifiesto($data_table[$clave]["manifiesto"]);
-                    $objServicios->setFecha_creacion($data_table[$clave]["fecha_creacion"]);
-                    $objServicios->setFecha_fin($data_table[$clave]["fecha_fin"]);
-                    $objServicios->setEstado($data_table[$clave]["estado"]);
-                    $objServicios->setSatelital($data_table[$clave]["satelital"]);
-                    $objServicios->setCiudad_origen($data_table[$clave]["ciudad_origen"]);
-                    $objServicios->setDireccion_descargue($data_table[$clave]["direccion_descargue"]);
-                    $objServicios->setSello($data_table[$clave]["sello"]);
-                    $objServicios->setNumero_contenedor($data_table[$clave]["numero_contenedor"]);
-                    $objServicios->setLink_localizador($data_table[$clave]["link_localizador"]);
-                    $objServicios->setUsuario_satelital($data_table[$clave]["usuario_satelital"]);
-                    $objServicios->setClave_satelital($data_table[$clave]["clave_satelital"]);
-                    $objServicios->setRuta($data_table[$clave]["ruta"]);
-                  }
+                if(count($data_table) > 0){
+                    $objServicios = new servicio(
+                    $data_table[0]["id_servicio"],
+                    $data_table[0]["id_conductor"],
+                    $data_table[0]["id_vehiculo"],
+                    $data_table[0]["id_cliente"],
+                    $data_table[0]["id_empleado"],
+                    $data_table[0]["manifiesto"],
+                    $data_table[0]["fecha_creacion"],
+                    $data_table[0]["fecha_fin"],
+                    $data_table[0]["estado"],
+                    $data_table[0]["satelital"],
+                    $data_table[0]["ciudad_origen"],
+                    $data_table[0]["direccion_descargue"],
+                    $data_table[0]["sello"],
+                    $data_table[0]["numero_contenedor"],
+                    $data_table[0]["link_localizador"],
+                    $data_table[0]["usuario_satelital"],
+                    $data_table[0]["clave_satelital"],
+                    $data_table[0]["ruta"]);
                   return $objServicios;
                 }else{
                   return null;
                 }
               }
-
+/****************************************************************************************************************************************/
               public function servicioEmp($id){
                 $data_source = new DataSource();
                 $data_table = $data_source->ejecutarConsulta("SELECT * FROM `servicio` where id_empleado = :id",array(
@@ -192,7 +192,7 @@ class serviciosDAO{
                     return null;
                   }
                 }
-
+/****************************************************************************************************************************************/
                 public function servicioCli($id){
                   $data_source = new DataSource();
                   $data_table = $data_source->ejecutarConsulta("SELECT * FROM `servicio` where id_cliente = :id",array(
@@ -225,7 +225,7 @@ class serviciosDAO{
                       return null;
                     }
                   }
-
+/****************************************************************************************************************************************/
                   public function registrarServicio(servicio $servicio){
                     $data_source = new DataSource();
                     $sql = "INSERT INTO servicio VALUES (:id_servico,:id_conductor,:id_vehiculo,:id_cliente,
@@ -257,7 +257,7 @@ class serviciosDAO{
                     return $resultado;
 
                   }
-
+/****************************************************************************************************************************************/
                   public function actualizarServicio(servicio $servicio){
                     $data_source = new DataSource();
                     $sql = "UPDATE servicio SET id_conductor = :id_conductor,
@@ -302,7 +302,7 @@ class serviciosDAO{
                   );
                   return $resultado;
                 }
-
+/****************************************************************************************************************************************/
                 public function cerrarServicio($id_servicio){
                   $data_source = new DataSource();
                   $sql = "UPDATE servicio SET estado = CERRADO,
@@ -311,8 +311,5 @@ class serviciosDAO{
                     ':id_servicio'=>$id_servicio));
                     return $resultado;
                   }
-
-
-
-                }
-                ?>
+}
+?>

@@ -15,7 +15,7 @@ require_once(PERSISTENCIA_PATH."DataSource.php");
               <select class='form-control' onchange='cargar()' id='depar' name='depar' '>
                <option value='sin Seleccion'>Seleccione departamento</option>";
        foreach ($data_table as $clave => $valor) {
-                 echo "<option value='".$data_table[$clave]["id_departamento"]."'>".$data_table[$clave]["departamento"]."</option>";
+                 echo "<option value='".$data_table[$clave]["id_departamento"]."'>".utf8_encode($data_table[$clave]["departamento"])."</option>";
                 }
        echo "</select></div>";
 
@@ -29,7 +29,7 @@ require_once(PERSISTENCIA_PATH."DataSource.php");
               <select class='form-control' onchange='cargar2()' id='depar2' name='depar2' '>
                <option value='sin Seleccion'>Seleccione departamento</option>";
        foreach ($data_table as $clave => $valor) {
-                 echo "<option value='".$data_table[$clave]["id_departamento"]."'>".$data_table[$clave]["departamento"]."</option>";
+                 echo "<option value='".$data_table[$clave]["id_departamento"]."'>".utf8_encode($data_table[$clave]["departamento"])."</option>";
                 }
        echo "</select></div>";
 

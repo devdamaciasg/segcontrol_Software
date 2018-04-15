@@ -5,8 +5,6 @@ require_once(CONTROLLER_PATH."vehiculoController.php");
 require_once(CONTROLLER_PATH."clienteController.php");
 require_once(VISTAS_PATH."recursosPHP/Colombia.php");
 ?>
-
-
 <div class="row">
   <div class="col-md-12">
     <div class="col-md-12">
@@ -107,11 +105,9 @@ require_once(VISTAS_PATH."recursosPHP/Colombia.php");
                 <input type="text" class="form-control" placeholder="Manifiesto ...">
               </div>
               <br>
-
               <?php
               $objColombia= new colombia();
-              $objColombia->departamentos( );?>
-              <div id="select_departamento"  class="form-group col-xs-3" ></div>
+              $objColombia->departamentos();?>
               <div id="select_municipio" class="form-group col-xs-3">
                 <label>Municipios Origen </label>
                 <select class="form-control ">
@@ -122,7 +118,6 @@ require_once(VISTAS_PATH."recursosPHP/Colombia.php");
               <?php
               $objColombia= new colombia();
               $objColombia->departamentos2();?>
-              <div id="select_departamento2"  class="form-group col-xs-3"></div>
               <div id="select_municipio2" class="form-group col-xs-3">
                 <label>Municipios Destino </label>
                 <select class="form-control ">

@@ -52,7 +52,7 @@ require_once(CONTROLLER_PATH."serviciosController.php");
                 $arrayServicios = array();
                 $arrayServicios=$objServi->listaTodosServicios();
                 if(is_null($arrayServicios) ){
-                  echo "<h3 class='box-title'>No hay clientes registrados en la base de datos actual! </h3>";
+                  echo "<h3 class='box-title'>No hay Servicios registrados en la base de datos actual! </h3>";
                 }else{
                   echo "<table class='table table-hover'>
                   <tbody>
