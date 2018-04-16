@@ -52,7 +52,7 @@
       <div class="icon">
         <i class="ion ion-pricetags"></i>
       </div>
-      <a href="#" id="aseguradores_main" class="small-box-footer">
+      <a href="#" id="aseguradoras_main" class="small-box-footer">
         Acceder <i class="fa fa-arrow-circle-right"></i>
       </a>
     </div>
