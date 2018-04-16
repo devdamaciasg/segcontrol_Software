@@ -17,7 +17,7 @@
                           &nbsp;
                         </h3>
                         <p>
-                          Critica
+                          Vencidos
                         </p>
                       </div>
                       <div class="icon">
@@ -36,7 +36,7 @@
                           &nbsp;
                         </h3>
                         <p>
-                            Warning
+                            Pronto a vencer
                         </p>
                       </div>
                       <div class="icon">
@@ -55,7 +55,7 @@
                           &nbsp;
                         </h3>
                         <p>
-                          En Tiempo
+                          Realizado a tiempo
                         </p>
                       </div>
                       <div class="icon">

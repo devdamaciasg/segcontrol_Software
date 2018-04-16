@@ -11,7 +11,7 @@ $arrayConductor=$objConductor->listaConductor();
   <div class="col-md-12">
     <div class="box">
       <div class="box-header">
-        <h3 class="box-title">Lista de Conductores Registrados</h3>
+        <h3 class="box-title">Lista de Registros : Aseguradoras</h3>
         <div class="box-tools">
           <div class="input-group">
             <input type="text" name="table_search" id="table_search" class="form-control input-sm pull-right" style="width: 150px;" placeholder="Buscar . . .">
@@ -22,7 +22,7 @@ $arrayConductor=$objConductor->listaConductor();
         </div>
         <div class="col-md-12">
           <button class='btn btn-danger' id='actualizar_tabla_empleado' value=""><i class="fa fa-refresh"></i></button>
-          <button class='btn btn-warning' id='actualizar_tabla_empleado' value=""><i class="fa  fa-file-text"></i> Crear nuevo conductor</button>
+          <button class='btn btn-warning' id='crear_aseguradora' value=""><i class="fa  fa-file-text"></i> Crear nuevo Registro</button>
 
         </div>
       </div><!-- /.box-header -->
@@ -66,4 +66,4 @@ $arrayConductor=$objConductor->listaConductor();
 </div>
 
 </div>
-<script type="text/javascript" src="../assets/js/AdminLTE/conductor.js"></script>
+<script type="text/javascript" src="../assets/js/AdminLTE/aseguradora.js"></script>

@@ -62,6 +62,11 @@
         <i class="fa fa-globe"></i> <span>Sitio Web</span>
       </a>
     </li>
+    <li>
+      <a href="http://segriongps.com/" >
+        <i class="fa fa-globe"></i> <span>Plataforma de trazabilidad</span>
+      </a>
+    </li>
   </ul>
   <br>
   <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
