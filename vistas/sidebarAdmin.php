@@ -64,7 +64,8 @@
     </li>
     <li>
       <a href="http://segriongps.com/" >
-        <i class="fa fa-globe"></i> <span>Plataforma de trazabilidad</span>
+        <i class="fa fa-globe"></i> <span>
+          Plataforma de trazabilidad</span>
       </a>
     </li>
   </ul>
