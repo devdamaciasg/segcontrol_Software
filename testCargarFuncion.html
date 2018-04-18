@@ -1,0 +1,25 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>js</title>
+  <script type="text/javascript">
+  var cont = 0;
+  function contador(){
+  	var contador = document.getElementById("contador");
+  	contador.value = cont;
+  	cont++;
+  }
+  </script>
+</head>
+<!-- 60 min 3600000ms-->
+<body onLoad="setInterval('contador()',1000);">
+
+  <form>
+  <label for="contador">Contador:</label><input type="text" id="contador">
+  </form>
+
+
+</body>
+</html>
