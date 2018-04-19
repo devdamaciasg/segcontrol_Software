@@ -14,7 +14,7 @@ require_once(CONTROLLER_PATH."serviciosController.php");
           <div id ="mensaje"></div>
           <div class="box-body">
             <div class="input-group">
-              <input type="text" name="table_search" id="table_search" class="form-control input-sm pull-right col-xs-8" style="width: 300px;" placeholder="Buscar . . .">
+              <input type="text" name="table_search" id="table_search" class="form-control inpu-t-sm pull-right col-xs-8" style="width: 300px;" placeholder="Buscar . . .">
               <div class="input-group-btn">
                 <button class="btn btn-sm btn-default" id="buscar_conductor_main"><i class="fa fa-search"></i></button>
               </div>
@@ -93,5 +93,5 @@ require_once(CONTROLLER_PATH."serviciosController.php");
       </div>
     </div>
   </div>
-    <script type="text/javascript" src="../assets/js/AdminLTE/servicios.js"></script>
-    <script type="text/javascript" src="../assets/js/AdminLTE/bitacora.js"></script>
+    <script type="text/javascript" src="../assets/js/AdminLTE/administrador/servicios.js"></script>
+    <script type="text/javascript" src="../assets/js/AdminLTE/administrador/bitacora.js"></script>

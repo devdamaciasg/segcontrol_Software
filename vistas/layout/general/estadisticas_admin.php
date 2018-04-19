@@ -61,11 +61,10 @@ $objController=new usuariosController();
       </a>
     </div>
   </div><!-- ./col -->
-
-
 <!-- top row -->
 <div class="row">
   <div class="col-xs-12 connectedSortable">
 
   </div><!-- /.col -->
 </div>
+<script src="../assets/js/AdminLTE/administrador/opcionUsuarios.js">

@@ -46,17 +46,17 @@ if(intval($rol)==1){
     <!-- Left side column. contains the logo and sidebar -->
     <aside class="left-side sidebar-offcanvas">
       <!-- sidebar: style can be found in sidebar.less -->
-    <?php
-     if(strcmp($sesion_rol,"administrador")==0){
+      <?php
+      if(strcmp($sesion_rol,"administrador")==0){
         require_once("sidebarAdmin.php");
       }else{
         if(strcmp($sesion_rol,"cliente")==0){
-         require_once("sidebarCliente.php");
+          require_once("sidebarCliente.php");
         }else{
-        require_once("sidebarAsistente.php");
+          require_once("sidebarAsistente.php");
         }
       }?>
-   <!-- /.sidebar -->
+      <!-- /.sidebar -->
     </aside>
     <!-- Right side column. Contains the navbar and content of the page -->
     <aside class="right-side">
@@ -68,36 +68,32 @@ if(intval($rol)==1){
         </h1>
         <br><br>
         <div class="alert alert-info alert-dismissable">
-                                        <i class="fa fa-info"></i>
-                                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                                        <b>Mensaje de Bienvenida </b>esto es una prueba de mensaje de bienvendidad peude ser cambiado desde la opcion<br>
-                                        administrador.</b>
-                                    </div>
+          <i class="fa fa-info"></i>
+          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+          <b>Mensaje de Bienvenida </b>esto es una prueba de mensaje de bienvendidad peude ser cambiado desde la opcion<br>
+          administrador.</b>
+        </div>
 
         <div id="smg_panel"></div>
       </section>
-        <!-- Main content -->
+      <!-- Main content -->
       <section class="content">
         <div id="contenido"><?php
-         if(strcmp($sesion_rol,"administrador")==0){
-            include_once(VISTAS_PATH."administrador.php");
+        if(strcmp($sesion_rol,"administrador")==0){
+          include_once(VISTAS_PATH."administrador.php");
+        }else{
+          if(strcmp($sesion_rol,"cliente")==0){
+            include_once("sidebarCliente.php");
           }else{
-            if(strcmp($sesion_rol,"cliente")==0){
-               include_once("sidebarCliente.php");
-            }else{
-              include_once("sidebarAsistente.php");
-            }
-          }?>
+            include_once("sidebarAsistente.php");
+          }
+        }?>
 
+      </div>
+    </section><!-- /.content -->
 
-
-
-
-        </div>
-      </section><!-- /.content -->
-
-    </aside><!-- /.right-side -->
-  </div><!-- ./wrapper -->
-  <?php require_once("footer.php");?>
+  </aside><!-- /.right-side -->
+</div><!-- ./wrapper -->
+<?php require_once("footer.php");?>
 </body>
 </html>

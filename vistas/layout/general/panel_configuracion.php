@@ -53,7 +53,7 @@
       <div class="icon">
         <i class="fa fa-tasks"></i>
       </div>
-      <a href="#" id="Estadisticas del Sistema" class="small-box-footer">
+      <a href="#" id="estadisticasSistema" class="small-box-footer">
         Acceder <i class="fa fa-arrow-circle-right"></i>
       </a>
     </div>
@@ -69,3 +69,4 @@
 </div>
 
 </div>
+<script src="../assets/js/AdminLTE/administrador/opcionConfiguracion.js">

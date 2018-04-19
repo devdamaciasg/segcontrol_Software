@@ -33,7 +33,7 @@
       <div class="icon">
         <i class="fa  fa-globe"></i>
       </div>
-      <a href="#" id="clientesVista" class="small-box-footer">
+      <a href="#" id="clientesMain" class="small-box-footer">
         Acceder <i class="fa fa-arrow-circle-right"></i>
       </a>
     </div>
@@ -53,7 +53,7 @@
       <div class="icon">
         <i class="fa fa-truck"></i>
       </div>
-      <a href="#" id="perfil" class="small-box-footer">
+      <a href="#" id="vehiculosMain" class="small-box-footer">
         Acceder <i class="fa fa-arrow-circle-right"></i>
       </a>
     </div>
@@ -66,3 +66,4 @@
 
   </div><!-- /.col -->
 </div>
+<script src="../assets/js/AdminLTE/administrador/opcionEmpresas.js">
