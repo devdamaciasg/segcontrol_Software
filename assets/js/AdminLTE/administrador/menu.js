@@ -7,6 +7,7 @@
  $(document).on('click','#menuUsuarios',function(e){
  e.stopPropagation();
  e.preventDefault();
+
  		$.ajax({
  			url:   '../vistas/layout/general/estadisticas_admin.php',
  			type:  'post',
@@ -37,7 +38,9 @@
  $(document).on('click','#menuActividades',function(e){
  e.stopPropagation();
  e.preventDefault();
+
      $.ajax({
+
        url:   '../vistas/layout/general/panel_actividades.php',
        type:  'post',
        beforeSend: function () {
@@ -53,7 +56,12 @@
  $(document).on('click','#menuServicios',function(e){
  e.stopPropagation();
  e.preventDefault();
+ console.log("Opcion -> menu servicios");
+ var rol=document.getElementById("rolHidden").value;
+ var params = { "rol" : rol};
+
      $.ajax({
+       data: params,
        url:   '../vistas/layout/general/panel_servicios.php',
        type:  'post',
        beforeSend: function () {

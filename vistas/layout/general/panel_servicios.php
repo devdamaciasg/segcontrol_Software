@@ -1,5 +1,5 @@
+<?php $sesion_rol= $_POST['rol']; ?>
 <div class="row">
-
   <div class="col-lg-3 col-xs-6">
     <!-- small box -->
     <div class="small-box bg-green">
@@ -38,25 +38,31 @@
       </a>
     </div>
   </div><!-- ./col -->
-  <div class="col-lg-3 col-xs-6">
-    <!-- small box -->
-    <div class="small-box bg-yellow">
-      <div class="inner">
-        <h3>
-          &nbsp;
-        </h3>
-        <p>
-            Aseguradoras
-        </p>
+
+  <?php
+  if(strcmp($sesion_rol,"administrador")==0){ ?>
+    <div class="col-lg-3 col-xs-6">
+      <!-- small box -->
+      <div class="small-box bg-yellow">
+        <div class="inner">
+          <h3>
+            &nbsp;
+          </h3>
+          <p>
+              Aseguradoras
+          </p>
+        </div>
+        <div class="icon">
+          <i class="ion ion-pricetags"></i>
+        </div>
+        <a href="#" id="aseguradoras_main" class="small-box-footer">
+          Acceder <i class="fa fa-arrow-circle-right"></i>
+        </a>
       </div>
-      <div class="icon">
-        <i class="ion ion-pricetags"></i>
-      </div>
-      <a href="#" id="aseguradoras_main" class="small-box-footer">
-        Acceder <i class="fa fa-arrow-circle-right"></i>
-      </a>
     </div>
-  </div>
+  <?php }?>
+
+
 
 
 

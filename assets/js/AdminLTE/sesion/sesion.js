@@ -5,25 +5,32 @@
  !**/
  /** funcion para validar entrda de usuario y clave al sistema***/
  $(document).on('click','#validarSesion',function(e){
+   console.log("validar sesion");
  e.stopPropagation();
  e.preventDefault();
  var user=document.getElementById("usuario").value;
  var pass=document.getElementById("clave").value;
  var params = { "usuario" : user, "clave" : pass };
  console.log(user+" "+pass);
- 		//llamada al fichero PHP con AJAX
  		$.ajax({
  			data:   params,
  			url:   '../controller/route/sesion/sesionRoute.php',
  			type:  'post',
  			beforeSend: function () {
- 				//mostramos gif "cargando"
- 				//jQuery('#loading_spinner').show();
- 				//antes de enviar la petición al fichero PHP, mostramos mensaje
  				$("#smg").html("Validando...");
  			},
  			success:  function (response) {
  				$("#smg").html(response);
       }});
  });
-/**  end function **/
+/*****************************************************/
+ $(document).on('click','#recordar',function(e){
+   alert("opcion recordar ... en construccion");
+});
+/*****************************************************/
+ $(document).on('click','#olvidoClave',function(e){
+   alert("opcion olvidoClave ... en construccion");
+});
+$(document).on('click','#cerrarSesion',function(e){
+  window.location.replace("http://segcontrol.com.co/app/segcontrol/vistas/index.php");
+});

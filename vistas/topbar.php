@@ -39,7 +39,7 @@
                 <a id="perfil" class="btn btn-default btn-flat">Perfil</a>
               </div>
               <div class="pull-right">
-                <a id="cerrar_sesion" class="btn btn-default btn-flat">Cerrar sesion</a>
+                <a id="cerrarSesion" class="btn btn-default btn-flat">Cerrar sesion</a>
               </div>
             </li>
           </ul>

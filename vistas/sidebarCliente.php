@@ -3,7 +3,7 @@
   <!-- Sidebar user panel -->
   <div class="user-panel">
     <div class="pull-left image">
-      <img src="img/avatar3.png" class="img-circle" alt="User Image" />
+      <img src="../assets/img/avatar5.png" class="img-circle" alt="User Image" />
     </div>
     <div class="pull-center info">
       <p>Bienvenido<br>  <?php echo "".$sesion_nombre ?></p>
@@ -15,22 +15,22 @@
   <ul class="sidebar-menu">
     <li class="active">
       <a href="index.html">
-        <i class="fa fa-dashboard"></i> <span>Cliente</span>
+        Menu <span><?php echo $sesion_rol ?></span>
       </a>
     </li>
     <li>
-      <a href="" id="Principal">
+      <a href="" id="principalCli">
         <i class="fa fa-bar-chart-o"></i> <span>Principal</span>
       </a>
     </li>
     <li>
-      <a href="" id="menuCuenta">
-        <i class="fa fa-th"></i> <span>Cuenta</span>
+      <a href="" id="perfil">
+        <i class="ion ion-card"></i> <span>Cuenta</span>
       </a>
     </li>
     <li>
       <a href=""id="menuServicios" >
-        <i class="fa fa-th"></i> <span>Servicio</span>
+        <i class="fa fa-code-fork"></i> <span>Servicio</span>
       </a>
     </li>
     <li class="active">

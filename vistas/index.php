@@ -16,23 +16,17 @@
                         <input type="password" name="clave" id="clave" class="form-control" placeholder="Contraseña ..."/>
                     </div>
                     <div class="form-group">
-                        <input type="checkbox" name="remember_me"/> Recordar sesion!
+                        <input type="checkbox" name="recordar" id="recordar"/> Recordar sesion!
                     </div>
                     <div id="smg" ></div>
                 </div>
                 <div class="footer">
                     <button type="submit" class="btn bg-olive btn-block"
                     id="validarSesion" name="validarSesion"  >Validar</button>
-
-                    <p><a id="olvidoClave" href="#" name="olvidoClave" >Olvide mi contraseña !</a></p>
-
-
+                    <p><a id="olvidoClave" href="#" name="olvidoClave" id="olvidoClave" >Olvide mi contraseña !</a></p>
                 </div>
             </form>
-
         </div>
-
-
       <?php require_once("footer.php");?>
     </body>
 </html>

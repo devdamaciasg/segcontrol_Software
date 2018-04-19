@@ -18,7 +18,7 @@
       </a>
     </li>
     <li>
-      <a href="" id="Principal">
+      <a href="" id="principalAdmin">
         <i class="fa fa-bar-chart-o"></i> <span>Principal</span>
       </a>
     </li>

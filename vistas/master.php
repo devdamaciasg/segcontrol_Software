@@ -41,7 +41,6 @@ if(intval($rol)==1){
   <input id="sesionHidden" name="sesionHidden" type="hidden" value="<?php echo $sesion_id ?>" />
   <input id="rolHidden" name="rolHidden" type="hidden" value="<?php echo $sesion_rol ?>" />
   <?php require_once("topbar.php");?>
-
   <div  id="app" class="wrapper row-offcanvas row-offcanvas-left">
     <!-- Left side column. contains the logo and sidebar -->
     <aside class="left-side sidebar-offcanvas">
@@ -73,7 +72,6 @@ if(intval($rol)==1){
           <b>Mensaje de Bienvenida </b>esto es una prueba de mensaje de bienvendidad peude ser cambiado desde la opcion<br>
           administrador.</b>
         </div>
-
         <div id="smg_panel"></div>
       </section>
       <!-- Main content -->
@@ -88,12 +86,21 @@ if(intval($rol)==1){
             include_once("sidebarAsistente.php");
           }
         }?>
-
       </div>
     </section><!-- /.content -->
-
   </aside><!-- /.right-side -->
 </div><!-- ./wrapper -->
-<?php require_once("footer.php");?>
+
+<?php
+if(strcmp($sesion_rol,"administrador")==0){
+  echo "<script type='text/javascript' src='../assets/js/AdminLTE/administrador/menu.js'></script>";
+}else{
+  if(strcmp($sesion_rol,"cliente")==0){
+    echo "<script type='text/javascript' src='../assets/js/AdminLTE/cliente/menu.js'></script>";
+  }else{
+    echo "<script type='text/javascript' src='../assets/js/AdminLTE/empleado/menu.js'></script>";
+  }
+}
+require_once("footer.php");?>
 </body>
 </html>

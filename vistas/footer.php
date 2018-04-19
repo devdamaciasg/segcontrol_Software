@@ -1,5 +1,5 @@
 
-<script type="text/javascript" src="../assets/js/AdminLTE/sesion.js"></script>
+<script type="text/javascript" src="../assets/js/AdminLTE/sesion/sesion.js"></script>
 <script type="text/javascript" src="../assets/js/AdminLTE/administrador/menu.js"></script>
 <script type="text/javascript" src="../assets/js/AdminLTE/cliente/menu.js"></script>
 <script type="text/javascript" src="../assets/js/AdminLTE/empleado/menu.js"></script>

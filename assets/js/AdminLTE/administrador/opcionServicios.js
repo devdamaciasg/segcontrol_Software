@@ -2,8 +2,11 @@
 $(document).on('click','#servicios_main',function(e){
   e.stopPropagation();
   e.preventDefault();
+  //
   console.log(" servicios opcion ->menu servicios");
+  //
   $.ajax({
+
     url:   '../vistas/layout/general/servicios/serviciosMain.php',
     type:  'post',
     beforeSend: function () {
