@@ -75,6 +75,7 @@ class clienteDao
       $objClientes = null;
 
    if( count($data_table)>0){
+     echo $data_table[0]["nombre_contacto"];
           $objClientes = new cliente(
           $data_table[0]["id_empleado"],
           $data_table[0]["id_usuario"],

@@ -33,6 +33,7 @@ class clienteController{
 
     public function clienteId($id_cliente){
       $ObjCliente=new clienteDao();
+      echo $id_cliente;
       return $ObjCliente->clienteId($id_cliente);
     }
 
