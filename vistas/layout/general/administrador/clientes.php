@@ -66,8 +66,4 @@ $arrayObj=$objController->cargarListaCliente(0);
 
     </div>
   </div>
-
-
-
-
   <script type="text/javascript" src="../assets/js/AdminLTE/cliente.js"></script>
